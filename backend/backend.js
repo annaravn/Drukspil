@@ -31,23 +31,25 @@ class Spil extends Udfordring {
     this.spil = spil;
   }
 }
-
-function lavKort() {
-  const kortArray = [];
-  for (let i = 0; i < 10; i++) {
-    let kort = new Kort(i, "Tekst" + i);
-    kortArray.push(kort);
-  }
-  return kortArray;
+function lavKort(callback) {
+  fs.readFile('backend/kort.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading JSON file:', err);
+      callback(err);
+      return;
+    }
+    const kort = JSON.parse(data);
+    callback(null, kort);
+  });
 }
 
 var i = -1;
-app.get("/kortTekst", (err, res) => {
+app.get("/kortTekst", (req, res) => {
   i++;
-  kortSamling = lavKort();
-  res.json(kortSamling[i]);
+  lavKort((err, kortSamling) => {
+    res.json(kortSamling[i]);
+  });
 });
-
 // Start the server
 app.listen(port, () => {
   console.log(`Backend listening on port ${port}`);
