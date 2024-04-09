@@ -1,4 +1,3 @@
-
 const express = require("express"); // require Express module
 const fs = require("fs"); // require File System module
 
@@ -34,18 +33,20 @@ class Spil extends Udfordring {
 }
 
 function lavKort() {
-    const kortArray = [];
+  const kortArray = [];
   for (let i = 0; i < 10; i++) {
-    let kort = new Kort(i, "Tekst"+i);
-    console.log(kort);
+    let kort = new Kort(i, "Tekst" + i);
     kortArray.push(kort);
   }
-  return kortArray[1];
+  return kortArray;
 }
-app.get('/kortTekst', (err, res) => {
 
-  res.json(lavKort());
-}); 
+var i = -1;
+app.get("/kortTekst", (err, res) => {
+  i++;
+  kortSamling = lavKort();
+  res.json(kortSamling[i]);
+});
 
 // Start the server
 app.listen(port, () => {
