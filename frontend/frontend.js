@@ -19,5 +19,14 @@ function HåndterUdfordring() {
 }
 
 function HåndterSpil(data) {
+  const spil = data.navn;
+  switch(spil) {
+    case "testSpil":
+      testSpil();
+      break;
+    case "russiskRulette":
+      russiskRulette();
+      break;
+  }
   console.log(data.navn, "Yay, et spil!");
 }
