@@ -1,4 +1,56 @@
 
+
+
+let inputCounter = 1;
+let inputs = {}; // Objekt til at gemme inputfelterne
+let person = "";
+
+document.getElementById("createButton").addEventListener("click", createInputField);
+
+function createInputField() {
+    // Opret et nyt inputfelt
+    let input = document.createElement("input");
+    input.type = "text";
+    let variableName = "variable" + inputCounter;
+    input.id = "input" + inputCounter; // Tildel et unikt ID til inputfeltet
+    input.placeholder = "Input " + inputCounter; // Tilføj placeholder
+
+    // Tilføj inputfeltet til DOM'en
+    document.getElementById("container").appendChild(input);
+
+    // Gem inputfeltet i objektet med variabelnavnet som nøgle
+    inputs[variableName] = input;
+
+    // Opdater variablen med værdien fra det nye inputfelt
+    input.addEventListener("input", function() {
+        updateVariable(variableName);
+    });
+
+    // Øg tælleren for inputfelter
+    inputCounter++;
+
+    console.log(inputCounter)
+}
+
+function updateVariable(variableName) {
+    // Find det tilsvarende inputfelt baseret på variabelnavnet
+    let inputId = variableName.replace("variable", "input");
+    let inputValue = document.getElementById(inputId).value;
+
+    // Opret den nye variabel med inputfeltets værdi
+    window[variableName] = inputValue;
+
+    console.log("Variabel " + variableName + " er opdateret: " + window[variableName]);
+   
+}
+
+
+
+
+
+
+
+
 let username = "Mikkel";
 let Eksempel = "";
 
@@ -11,9 +63,32 @@ document.getElementById("mySubmit").onclick = function() {
 
 
 
+function random() {
+  return Math.floor(Math.random() * inputCounter) + 1;
+}
+
 
 
 function HåndterUdfordring() {
+
+  
+
+  let tilfældigtTal = random();
+  console.log(tilfældigtTal);
+
+  console.log("variable2 er opdateret: " + variable2);
+
+  person = variable + 2;
+  person = variable2;
+ 
+  
+  
+
+
+
+
+
+
   fetch("/kortTekst")
     .then((response) => response.json())
     .then((data) => {
@@ -22,7 +97,7 @@ function HåndterUdfordring() {
         kortHolder.innerHTML = "";
         console.log(data);
         // Erstat "[person1]" med "Mikkel" i teksten
-        const tekst = data.tekst.replace(/\[person1\]/g, username);
+        const tekst = data.tekst.replace(/\[person1\]/g, variable2);
         data.tekst = tekst; // Opdater teksten i data-objektet
         console.log(data); // Log det opdaterede data-objekt
         const tekstHolder = document.createTextNode(data.tekst);
@@ -35,6 +110,7 @@ function HåndterUdfordring() {
       }
     })
     .catch((error) => console.error("Error:", error));
+    console.log(inputCounter);
 }
 
 function HåndterSpil(data) {
