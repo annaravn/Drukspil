@@ -71,15 +71,11 @@ function random() {
 
 function HåndterUdfordring() {
 
+  let tilfældigtIndex = random();
+  let variabelNavn = "variable" + tilfældigtIndex;
+  person = window[variabelNavn];
   
-
-  let tilfældigtTal = random();
-  console.log(tilfældigtTal);
-
-  console.log("variable2 er opdateret: " + variable2);
-
-  person = variable + 2;
-  person = variable2;
+  console.log("Valgt person:", person);
  
   
   
@@ -97,7 +93,7 @@ function HåndterUdfordring() {
         kortHolder.innerHTML = "";
         console.log(data);
         // Erstat "[person1]" med "Mikkel" i teksten
-        const tekst = data.tekst.replace(/\[person1\]/g, variable2);
+        const tekst = data.tekst.replace(/\[person1\]/g, person);
         data.tekst = tekst; // Opdater teksten i data-objektet
         console.log(data); // Log det opdaterede data-objekt
         const tekstHolder = document.createTextNode(data.tekst);
