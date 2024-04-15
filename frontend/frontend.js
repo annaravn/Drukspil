@@ -27,6 +27,9 @@ function HåndterSpil(data) {
     case "russiskRulette":
       russiskRulette();
       break;
+    case "spinWheel":
+      spinWheel();
+      break;
   }
   console.log(data.navn, "Yay, et spil!");
 }
