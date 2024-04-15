@@ -6,6 +6,10 @@ function HåndterUdfordring() {
         const kortHolder = document.getElementById("kortHolder");
         kortHolder.innerHTML = "";
         console.log(data);
+        // Erstat "[person1]" med "Mikkel" i teksten
+        const tekst = data.tekst.replace(/\[person1\]/g, "Mikkel");
+        data.tekst = tekst; // Opdater teksten i data-objektet
+        console.log(data); // Log det opdaterede data-objekt
         const tekstHolder = document.createTextNode(data.tekst);
         kortHolder.appendChild(tekstHolder);
       } else if (data.type === "spil") {
