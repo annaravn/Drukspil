@@ -1,3 +1,18 @@
+
+let username = "Mikkel";
+let Eksempel = "";
+
+document.getElementById("mySubmit").onclick = function() {
+  Eksempel = document.getElementById("myText").value;
+  username = Eksempel;
+ 
+
+}
+
+
+
+
+
 function HåndterUdfordring() {
   fetch("/kortTekst")
     .then((response) => response.json())
@@ -7,7 +22,7 @@ function HåndterUdfordring() {
         kortHolder.innerHTML = "";
         console.log(data);
         // Erstat "[person1]" med "Mikkel" i teksten
-        const tekst = data.tekst.replace(/\[person1\]/g, "Mikkel");
+        const tekst = data.tekst.replace(/\[person1\]/g, username);
         data.tekst = tekst; // Opdater teksten i data-objektet
         console.log(data); // Log det opdaterede data-objekt
         const tekstHolder = document.createTextNode(data.tekst);
