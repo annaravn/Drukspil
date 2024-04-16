@@ -38,13 +38,15 @@ h1 {
 }
 
 #kortHolder {
-    width: 30vw; /* Set width as needed */
-    height: 8vh;
+    width: 25vw;
+    height: 20vh;
+    min-height: 150px; /* Indstil en minimumshøjde på 150 pixels */
     background-color: #f0f0f0;
     padding: 50px;
-    margin: 20px auto; /* Center the card horizontally */
+    margin: 20px auto;
     text-align: center;
     border-radius: 10px;
+
 }
 
 #hentTekst:hover {

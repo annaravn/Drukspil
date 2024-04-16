@@ -69,6 +69,18 @@ function random() {
 }
 
 
+// Funktion til at opdatere padding baseret på tekstlængde
+function updatePadding(tekst) {
+  const ordAntal = tekst.split(' ').length; // Beregn antallet af ord
+  const padding = ordAntal > 30 ? 70 : 50; // Juster værdierne som du ønsker
+  document.getElementById('kortHolder').style.padding = `${padding}px`;
+  const width = ordAntal > 30 ? 60 : 50; // Juster værdierne som du ønsker
+  document.getElementById('kortHolder').style.width = `${width}vw`;
+  
+  
+}
+
+
 
 function HåndterUdfordring() {
 
@@ -103,6 +115,7 @@ function HåndterUdfordring() {
         console.log(data); // Log det opdaterede data-objekt
         const tekstHolder = document.createTextNode(data.tekst);
         kortHolder.appendChild(tekstHolder);
+        updatePadding(data.tekst);
       } else if (data.type === "spil") {
         console.log("Her var et spil");
         HåndterSpil(data);
@@ -110,6 +123,7 @@ function HåndterUdfordring() {
         console.log("Fejl: hverken kort eller spil");
       }
     })
+    
     .catch((error) => console.error("Error:", error));
     console.log(inputCounter);
 }
