@@ -4,6 +4,7 @@
 let inputCounter = 1;
 let inputs = {}; // Objekt til at gemme inputfelterne
 let person = "";
+let person1 = "";
 
 document.getElementById("createButton").addEventListener("click", createInputField);
 
@@ -64,7 +65,7 @@ document.getElementById("mySubmit").onclick = function() {
 
 
 function random() {
-  return Math.floor(Math.random() * inputCounter) + 1;
+  return Math.floor(Math.floor(Math.random() * inputCounter) + 1);
 }
 
 
@@ -72,8 +73,11 @@ function random() {
 function HåndterUdfordring() {
 
   let tilfældigtIndex = random();
+  let tilfældigtIndex1 = random();
   let variabelNavn = "variable" + tilfældigtIndex;
+  let variabelNavn1 = "variable" + tilfældigtIndex1;
   person = window[variabelNavn];
+  person1 = window[variabelNavn1];
   
   console.log("Valgt person:", person);
  
@@ -93,7 +97,8 @@ function HåndterUdfordring() {
         kortHolder.innerHTML = "";
         console.log(data);
         // Erstat "[person1]" med "Mikkel" i teksten
-        const tekst = data.tekst.replace(/\[person1\]/g, person);
+        let tekst = data.tekst.replace(/\[person1\]/g, person);
+        tekst = tekst.replace(/\[person2\]/g, person1);
         data.tekst = tekst; // Opdater teksten i data-objektet
         console.log(data); // Log det opdaterede data-objekt
         const tekstHolder = document.createTextNode(data.tekst);
