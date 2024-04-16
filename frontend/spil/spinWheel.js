@@ -8,9 +8,15 @@ function spinWheel() {
     iframe.src = 'spil/spinWheel.html';
     
     // Sæt størrelsen på iframe
-    iframe.style.width = '100%'; // Indstil bredden til 100% af forælderens bredde
-    iframe.style.height = '100vh'; // Indstil højden til 100% af viewportens højde
+    // Angiv stilen for i-framen ved hjælp af JavaScript
+    iframe.style.width = '100%'; // Juster bredden af ​​i-framen
+    iframe.style.height = '100%'; // Juster højden af ​​i-framen
     iframe.style.border = 'none'; // Fjern rammen for en mere sømløs integration
+    iframe.style.position = 'absolute'; // Placer i-framen absolut
+    iframe.style.top = '50%'; // Placer i-framen 50% fra toppen
+    iframe.style.left = '50%'; // Placer i-framen 50% fra venstre
+    iframe.style.transform = 'translate(-50%, -50%)'; // Juster placeringen for at centrere i-framen
+    
     
     // Indsæt iframe inden i det eksisterende element på din side
     document.getElementById('spinWheelContainer').appendChild(iframe);
