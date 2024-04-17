@@ -1,7 +1,7 @@
 
 
 
-let inputCounter = 1;
+let inputCounter = 0;
 let inputs = {}; // Objekt til at gemme inputfelterne
 let person = "";
 let person1 = "";
@@ -96,7 +96,7 @@ function updateVariable(variableName) {
 
 
 function random() {
-  return Math.floor(Math.floor(Math.random() * inputCounter) + 1);
+  return Math.floor((Math.random() * inputCounter));
 }
 
 
