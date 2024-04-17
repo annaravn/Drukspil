@@ -35,7 +35,7 @@ function createInputField() {
 
 // Tilføj en funktion til at fjerne inputfelter og de tilknyttede variabler
 function removeInputField() {
-  if (inputCounter > 1) { // Kontroller, at der er mere end ét inputfelt
+  if (inputCounter >= 1) { // Kontroller, at der er mere end ét inputfelt
       inputCounter--; // Reducer antallet af inputfelter
       let variableName = "variable" + inputCounter; // Bestem navnet på variablen der skal fjernes
       let inputId = "input" + inputCounter; // Bestem ID'et for inputfeltet der skal fjernes
@@ -53,11 +53,15 @@ function removeInputField() {
 // Funktion til at skjule inputfelter
 function toggleInputFieldsVisibility() {
   const container = document.getElementById("container"); // Find containeren for inputfelter
-
+  const fjerneknap = document.getElementById("fjerneknap"); // Find containeren for inputfelter
   if (container.style.display === "none") {
       container.style.display = "block"; // Vis inputfelterne, hvis de er skjulte
+      fjerneknap.style.display = "block";
+
+    
   } else {
       container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
+      fjerneknap.style.display = "none";
   }
 }
 
