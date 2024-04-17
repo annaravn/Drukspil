@@ -33,6 +33,44 @@ function createInputField() {
     console.log(inputCounter)
 }
 
+// Tilføj en funktion til at fjerne inputfelter og de tilknyttede variabler
+function removeInputField() {
+  if (inputCounter > 1) { // Kontroller, at der er mere end ét inputfelt
+      inputCounter--; // Reducer antallet af inputfelter
+      let variableName = "variable" + inputCounter; // Bestem navnet på variablen der skal fjernes
+      let inputId = "input" + inputCounter; // Bestem ID'et for inputfeltet der skal fjernes
+      let inputElement = document.getElementById(inputId); // Find inputfeltet i DOM'en
+
+      document.getElementById("container").removeChild(inputElement); // Fjern inputfeltet fra DOM'en
+      delete inputs[variableName]; // Slet inputfeltet fra objektet
+      delete window[variableName]; // Slet den globale variabel
+
+      console.log("Inputfelt og variabel fjernet: " + variableName); // Log fjernelsen
+  }
+}
+
+
+// Funktion til at skjule inputfelter
+function toggleInputFieldsVisibility() {
+  const container = document.getElementById("container"); // Find containeren for inputfelter
+
+  if (container.style.display === "none") {
+      container.style.display = "block"; // Vis inputfelterne, hvis de er skjulte
+  } else {
+      container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
+  }
+}
+
+// Tilføj en knap til at skjule og vise inputfelter
+let toggleVisibilityButton = document.createElement("button"); // Opret en knap
+toggleVisibilityButton.textContent = "Skjul/Vis inputfelter"; // Sæt tekst på knappen
+toggleVisibilityButton.addEventListener("click", toggleInputFieldsVisibility); // Tilføj klik-event til at skifte synlighed
+
+document.body.appendChild(toggleVisibilityButton); // Tilføj knappen til body-elementet
+
+
+
+
 function updateVariable(variableName) {
     // Find det tilsvarende inputfelt baseret på variabelnavnet
     let inputId = variableName.replace("variable", "input");
@@ -52,15 +90,8 @@ function updateVariable(variableName) {
 
 
 
-let username = "Mikkel";
-let Eksempel = "";
 
-document.getElementById("mySubmit").onclick = function() {
-  Eksempel = document.getElementById("myText").value;
-  username = Eksempel;
- 
 
-}
 
 
 
