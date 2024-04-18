@@ -4,18 +4,18 @@ const spinBtn = document.getElementById("spin_btn");
 const text = document.getElementById("text");
 /* --------------- Minimum And Maximum Angle For A value  --------------------- */
 const spinValues = [
-  { minDegree: 61, maxDegree: 90, value: 100 },
-  { minDegree: 31, maxDegree: 60, value: 200 },
-  { minDegree: 0, maxDegree: 30, value: 300 },
-  { minDegree: 331, maxDegree: 360, value: 400 },
-  { minDegree: 301, maxDegree: 330, value: 500 },
-  { minDegree: 271, maxDegree: 300, value: 600 },
-  { minDegree: 241, maxDegree: 270, value: 700 },
-  { minDegree: 211, maxDegree: 240, value: 800 },
-  { minDegree: 181, maxDegree: 210, value: 900 },
-  { minDegree: 151, maxDegree: 180, value: 1000 },
-  { minDegree: 121, maxDegree: 150, value: 1100 },
-  { minDegree: 91, maxDegree: 120, value: 1200 },
+  { minDegree: 61, maxDegree: 90, value: "1 tår" },
+  { minDegree: 31, maxDegree: 60, value: "2 tår" },
+  { minDegree: 0, maxDegree: 30, value: "3 tår" },
+  { minDegree: 331, maxDegree: 360, value: "4 tår" },
+  { minDegree: 301, maxDegree: 330, value: "5 tår" },
+  { minDegree: 271, maxDegree: 300, value: "6 tår" },
+  { minDegree: 241, maxDegree: 270, value: "7 tår" },
+  { minDegree: 211, maxDegree: 240, value: "8 tår" },
+  { minDegree: 181, maxDegree: 210, value: "9 tår" },
+  { minDegree: 151, maxDegree: 180, value: "10 tår" },
+  { minDegree: 121, maxDegree: 150, value: "11 tår" },
+  { minDegree: 91, maxDegree: 120, value: "12 tår" },
 ];
 /* --------------- Size Of Each Piece  --------------------- */
 const size = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10];
@@ -69,7 +69,7 @@ let spinChart = new Chart(spinWheel, {
 const generateValue = (angleValue) => {
   for (let i of spinValues) {
     if (angleValue >= i.minDegree && angleValue <= i.maxDegree) {
-      text.innerHTML = `<p>Congratulations, You Have Won $${i.value} ! </p>`;
+      text.innerHTML = `<p>DU SKAL DRIKKE ${i.value} ! </p>`;
       spinBtn.disabled = false;
       break;
     }
@@ -80,7 +80,7 @@ let count = 0;
 let resultValue = 101;
 spinBtn.addEventListener("click", () => {
   spinBtn.disabled = true;
-  text.innerHTML = `<p>Best Of Luck!</p>`;
+  text.innerHTML = `<p>Held og lykke!</p>`;
   let randomDegree = Math.floor(Math.random() * (355 - 0 + 1) + 0);
   let rotationInterval = window.setInterval(() => {
     spinChart.options.rotation = spinChart.options.rotation + resultValue;
