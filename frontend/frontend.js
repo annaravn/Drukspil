@@ -121,21 +121,10 @@ function HåndterUdfordring() {
 
   let tilfældigtIndex = random();
   let tilfældigtIndex1 = random();
-
-  while (tilfældigtIndex1 === tilfældigtIndex) {
-    tilfældigtIndex1 = random();
-  }
-
-
   let variabelNavn = "variable" + tilfældigtIndex;
   let variabelNavn1 = "variable" + tilfældigtIndex1;
   person = window[variabelNavn];
   person1 = window[variabelNavn1];
-
-
-    // Sikrer at tilfældigtIndex1 ikke er det samme som tilfældigtIndex
-    
-
   
   console.log("Valgt person:", person);
  
