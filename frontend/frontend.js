@@ -66,11 +66,7 @@ function toggleInputFieldsVisibility() {
 }
 
 // Tilføj en knap til at skjule og vise inputfelter
-let toggleVisibilityButton = document.createElement("button"); // Opret en knap
-toggleVisibilityButton.textContent = "Skjul/Vis inputfelter"; // Sæt tekst på knappen
-toggleVisibilityButton.addEventListener("click", toggleInputFieldsVisibility); // Tilføj klik-event til at skifte synlighed
 
-document.body.appendChild(toggleVisibilityButton); // Tilføj knappen til body-elementet
 
 
 
