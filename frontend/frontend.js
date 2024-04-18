@@ -121,6 +121,14 @@ function HåndterUdfordring() {
 
   let tilfældigtIndex = random();
   let tilfældigtIndex1 = random();
+  
+
+  if(tilfældigtIndex1 === tilfældigtIndex) {
+    tilfældigtIndex1 = random();
+  }
+    
+
+
   let variabelNavn = "variable" + tilfældigtIndex;
   let variabelNavn1 = "variable" + tilfældigtIndex1;
   person = window[variabelNavn];
