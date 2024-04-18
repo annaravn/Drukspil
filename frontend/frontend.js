@@ -54,20 +54,26 @@ function removeInputField() {
 function toggleInputFieldsVisibility() {
   const container = document.getElementById("container"); // Find containeren for inputfelter
   const fjerneknap = document.getElementById("fjerneknap"); // Find containeren for inputfelter
+  const TJEKBOKS = document.getElementById("TJEKBOKS"); // Find containeren for inputfelter
   if (container.style.display === "none") {
       container.style.display = "block"; // Vis inputfelterne, hvis de er skjulte
       fjerneknap.style.display = "block";
+      TJEKBOKS.style.display = "block";
+
 
     
   } else {
       container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
       fjerneknap.style.display = "none";
+      TJEKBOKS.style.display = "none";
   }
 }
 
 container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
-      fjerneknap.style.display = "none";
+fjerneknap.style.display = "none";
+TJEKBOKS.style.display = "none";
 // Tilføj en knap til at skjule og vise inputfelter
+
 
 
 
@@ -169,18 +175,32 @@ function HåndterUdfordring() {
     console.log(inputCounter);
 }
 
-function HåndterSpil(data) {
-  const spil = data.navn;
-  switch(spil) {
-    case "testSpil":
-      testSpil();
-      break;
-    case "russiskRulette":
-      russiskRulette();
-      break;
-    case "spinWheel":
-      spinWheel();
-      break;
+
+
+let checkboxStatus = true; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
+
+// Tilføj en event listener til checkboxen for at håndtere ændringer
+document.getElementById('toggleCheckbox').addEventListener('change', function() {
+    checkboxStatus = this.checked; // Ændrer værdien af checkboxStatus baseret på om checkboxen er checked eller ej
+    console.log('Checkbox status:', checkboxStatus); // Logger den nye status i konsollen
+});
+
+
+
+  
+  function HåndterSpil(data) {
+    const spil = data.navn;
+    switch(spil) {
+      case "testSpil":
+       if(checkboxStatus){testSpil();}; 
+        break;
+      case "russiskRulette":
+        if(checkboxStatus){russiskRulette();};
+        break;
+      case "spinWheel":
+        if(checkboxStatus){spinWheel()};
+        break;
+    }
+    console.log(data.navn, "Yay, et spil!");
   }
-  console.log(data.navn, "Yay, et spil!");
-}
+

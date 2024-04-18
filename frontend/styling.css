@@ -121,3 +121,19 @@ h1 {
     padding: 30px 150px; /* Større polstring for at gøre knappen større */
     font-size: 2rem; /* Større skriftstørrelse, juster efter behov */
 }
+label[for="toggleCheckbox"] {
+    display: inline-block; /* Gør det muligt at sætte margin */
+    margin-right: 10px; /* Tilføj lidt plads mellem label og checkbox */
+    cursor: pointer; /* Gør musemarkøren til en hånd, når du holder over label */
+    font-size: 1.2rem; /* Større tekststørrelse for bedre læsbarhed */
+    color: #fff;
+}
+
+/* Custom style for checkbox */
+#toggleCheckbox {
+    accent-color: green; /* Skifter farven på checkboxen når den er markeret */
+    cursor: pointer; /* Gør musemarkøren til en hånd, når du holder over checkbox */
+    transform: scale(1.5); /* Forstørrer checkboxen for bedre tilgængelighed */
+    margin: 5px; /* Lidt plads omkring checkboxen */
+
+}
