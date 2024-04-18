@@ -65,6 +65,8 @@ function toggleInputFieldsVisibility() {
   }
 }
 
+container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
+      fjerneknap.style.display = "none";
 // Tilføj en knap til at skjule og vise inputfelter
 
 

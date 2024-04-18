@@ -54,7 +54,7 @@ h1 {
 }
 #SKJUL{
 
-    width: 20vw;
+    width: 13vw;
 
 }
 #container {
@@ -79,6 +79,32 @@ h1 {
 }
 
 #container:active {
+    transform: scale(0.95); /* Tryk-effekt når knappen er klikket */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skygge når knappen er klikket */
+}
+
+#fjerneknap {
+    background-color: rgb(255, 255, 255); /* Grøn baggrundsfarve */
+    color: white; /* Hvid tekstfarve */
+    padding: 5px 5px; /* Polstring for størrelse */
+    text-align: center; /* Centreret tekst */
+    font-size: 1.5em; /* Større tekststørrelse */
+    font-weight: bold; /* Fed tekst */
+    border: none; /* Ingen kanter */
+    border-radius: 20px; /* Runde hjørner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Skyggeeffekt for dybde */
+    cursor: pointer; /* Cursor som en hånd når du holder musen over */
+    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Animation for klik og hover */
+    outline: none; /* Ingen kontur når den er i fokus */
+    margin-top: 10px; /* Afstand fra toppen */
+}
+
+#fjerneknap:hover {
+    transform: scale(1.05); /* Let forstørrelse ved hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Større skygge ved hover */
+}
+
+#fjerneknap:active {
     transform: scale(0.95); /* Tryk-effekt når knappen er klikket */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skygge når knappen er klikket */
 }
