@@ -23,6 +23,7 @@ function spinWheel() {
     
     // Tilføj en knap til at lukke iframe'et
     var closeButton = document.createElement('button');
+    closeButton.id = 'closeButton'; // Sætter ID på knappen
     closeButton.textContent = 'Luk';
     closeButton.addEventListener('click', closeSpinWheel);
     document.getElementById('spinWheelContainer').appendChild(closeButton);

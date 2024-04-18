@@ -108,3 +108,16 @@ h1 {
     transform: scale(0.95); /* Tryk-effekt når knappen er klikket */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skygge når knappen er klikket */
 }
+#closeButton {
+    /* Her kan du tilføje dine CSS styles */
+    background-color: #f44336; /* Rød baggrundsfarve for eksempel */
+    color: white; /* Hvid tekst */
+    /* Eksisterende stilarter */
+    position: fixed; /* Fastgør knappen til en position på skærmen */
+    left: 50%; /* Centrerer knappen horisontalt */
+    bottom: 3; /* Placerer knappen i bunden af skærmen */
+    transform: translateX(-50%) translateY(50%); /* Flytter knappen op og centrere den horisontalt */
+    z-index: 1000; /* Sørger for at knappen ligger over andre elementer */
+    padding: 30px 150px; /* Større polstring for at gøre knappen større */
+    font-size: 2rem; /* Større skriftstørrelse, juster efter behov */
+}
