@@ -138,3 +138,42 @@ label[for="toggleCheckbox"] {
     margin: 5px; /* Lidt plads omkring checkboxen */
 
 }
+
+
+#valgmuligheder {
+    padding: 25px;
+    max-width: 350px; /* Justeret bredde for bedre visning */
+    background-color: #ffffff; /* Ren hvid for at fremhæve elementet */
+    border-radius: 10px; /* Mere markante afrundede hjørner */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Dybere og mere markant skygge */
+    text-align: center; /* Sørger for at teksten er centreret */
+}
+
+#optionsSelect {
+    width: 100%;
+    padding: 12px 10px; /* Lidt mere padding for bedre klikbarhed */
+    border-radius: 6px; /* Blødere kanter */
+    border: 2px solid #dee2e6; /* Solid og subtil kant */
+    background-color: #f8f9fa; /* En anelse grå baggrund for at skille sig ud fra hvid */
+    color: #495057; /* Mørkere grå for bedre læsbarhed */
+    cursor: pointer;
+    transition: all 0.3s; /* Glat transition for hover og focus */
+}
+
+#optionsSelect:focus {
+    outline: none;
+    border-color: #007bff; /* Lyseblå fremhævning ved fokus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtil glorie-effekt */
+}
+
+option {
+    padding: 10px; /* Ensartet padding for alle valgmuligheder */
+    background-color: #fff; /* Hvid baggrund for at sikre læsbarhed */
+}
+
+/* Farvetema til hver mulighed for visuel differentiering */
+option[value="mulighed1"] { background-color: #f0fff4; } /* Blød mint */
+option[value="mulighed2"] { background-color: #c6f6d5; } /* Lys grøn */
+option[value="mulighed3"] { background-color: #9ae6b4; } /* Mellemliggende grøn */
+option[value="mulighed4"] { background-color: #68d391; } /* Frisk grøn */
+option[value="mulighed5"] { background-color: #38a169; } /* Dyb grøn */

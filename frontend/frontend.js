@@ -5,6 +5,7 @@ let inputCounter = 0;
 let inputs = {}; // Objekt til at gemme inputfelterne
 let person = "";
 let person1 = "";
+let driktårer = "4";
 
 document.getElementById("createButton").addEventListener("click", createInputField);
 
@@ -59,6 +60,7 @@ function toggleInputFieldsVisibility() {
       container.style.display = "block"; // Vis inputfelterne, hvis de er skjulte
       fjerneknap.style.display = "block";
       TJEKBOKS.style.display = "block";
+      valgmuligheder.style.display = "block";
 
 
     
@@ -66,12 +68,15 @@ function toggleInputFieldsVisibility() {
       container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
       fjerneknap.style.display = "none";
       TJEKBOKS.style.display = "none";
+      valgmuligheder.style.display = "none";
   }
 }
 
 container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
 fjerneknap.style.display = "none";
 TJEKBOKS.style.display = "none";
+valgmuligheder.style.display = "none";
+
 // Tilføj en knap til at skjule og vise inputfelter
 
 
@@ -120,9 +125,23 @@ function updatePadding(tekst) {
 }
 
 
+document.getElementById('optionsSelect').addEventListener('change', function() {
+  var selectedOption = parseInt(this.value); // Henter og konverterer værdien af den valgte mulighed til en streng
+  console.log('Valgt mulighed:', selectedOption); // Logger den valgte mulighed i konsollen som en streng
+
+  // Opdater 'driktårer' med den nye værdi af 'selectedOption'
+  driktårer = selectedOption + 9;
+});
+
+
+
+
 
 function HåndterUdfordring() {
 
+  
+  
+  
   let tilfældigtIndex = random();
   let tilfældigtIndex1 = random();
   
@@ -145,7 +164,7 @@ function HåndterUdfordring() {
 
 
 
-
+  
 
 
   fetch("/kortTekst")
@@ -158,6 +177,7 @@ function HåndterUdfordring() {
         // Erstat "[person1]" med "Mikkel" i teksten
         let tekst = data.tekst.replace(/\[person1\]/g, person);
         tekst = tekst.replace(/\[person2\]/g, person1);
+        tekst = tekst.replace(/\[driktårer\]/g, driktårer);
         data.tekst = tekst; // Opdater teksten i data-objektet
         console.log(data); // Log det opdaterede data-objekt
         const tekstHolder = document.createTextNode(data.tekst);
@@ -184,6 +204,9 @@ document.getElementById('toggleCheckbox').addEventListener('change', function() 
     checkboxStatus = this.checked; // Ændrer værdien af checkboxStatus baseret på om checkboxen er checked eller ej
     console.log('Checkbox status:', checkboxStatus); // Logger den nye status i konsollen
 });
+
+
+
 
 
 
