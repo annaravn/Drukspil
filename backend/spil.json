@@ -1,9 +1,13 @@
 [
-{"id": 51,"navn": "testSpil"}, 
-{"id": 52, "navn": "russiskRulette"},
+{"id": 51,"navn": "hangMan"}, 
+{"id": 52, "navn": "flappyBird"},
 {"id": 53, "navn": "spinWheel"},
 {"id": 54, "navn": "talGeat"},
 {"id": 55, "navn": "WhackAMole"},
 {"id": 56, "navn": "huskeSpil"},
-{"id": 57, "navn": "blackJack"}
+{"id": 57, "navn": "blackJack"},
+{"id": 58, "navn": "stenSaksPapir"},
+{"id": 59, "navn": "reactionTest"},
+{"id": 60, "navn": "wordScrable"}
+
 ]

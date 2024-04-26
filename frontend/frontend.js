@@ -191,11 +191,11 @@ document.getElementById('toggleCheckbox').addEventListener('change', function() 
   function HåndterSpil(data) {
     const spil = data.navn;
     switch(spil) {
-      case "testSpil":
-       if(checkboxStatus){testSpil();}; 
+      case "hangMan":
+       if(checkboxStatus){hangMan();}; 
         break;
-      case "russiskRulette":
-        if(checkboxStatus){russiskRulette();};
+      case "flappyBird":
+        if(checkboxStatus){flappyBird();};
         break;
       case "spinWheel":
         if(checkboxStatus){spinWheel()};
@@ -211,6 +211,15 @@ document.getElementById('toggleCheckbox').addEventListener('change', function() 
       break;
       case "blackJack":
       if(checkboxStatus){blackJack()};
+      break;
+      case "stenSaksPapir":
+      if(checkboxStatus){stenSaksPapir()};
+      break;
+      case "reactionTest":
+      if(checkboxStatus){reactionTest()};
+      break;
+      case "wordScrable":
+      if(checkboxStatus){wordScrable()};
       break;
     }
     

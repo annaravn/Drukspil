@@ -3,6 +3,11 @@ let iframe2;
 let iframe3;
 let iframe4;
 let iframe5;
+let iframe6;
+let iframe7;
+let iframe8;
+let iframe9;
+let iframe10;
 
 
 function spinWheel() {
@@ -174,6 +179,221 @@ function blackJack() {
 
 
 }
+
+function hangMan() {
+    // Opret et iframe-element
+    iframe6 = document.createElement('iframe');
+   
+    // Sæt kilden for iframe til spinWheel.html
+    iframe6.src = 'spil/hangMan.html';
+    
+    // Sæt størrelsen på iframe
+    // Angiv stilen for i-framen ved hjælp af JavaScript
+    iframe6.style.width = '100%'; // Juster bredden af ​​i-framen
+    iframe6.style.height = '100%'; // Juster højden af ​​i-framen
+    iframe6.style.border = 'none'; // Fjern rammen for en mere sømløs integration
+    iframe6.style.position = 'absolute'; // Placer i-framen absolut
+
+    iframe6.style.top = '50%'; // Placer i-framen 50% fra toppen
+    iframe6.style.left = '50%'; // Placer i-framen 50% fra venstre
+    iframe6.style.transform = 'translate(-50%, -50%)'; // Juster placeringen for at centrere i-framen
+
+    // Indsæt iframe inden i det eksisterende element på din side
+    document.getElementById('hangManContainer').appendChild(iframe6);
+
+    // Tilføj en knap til at lukke iframe'et
+    var closeButton6 = document.createElement('button');
+    closeButton6.id = 'closeButton'; // Sætter ID på knappen
+    closeButton6.textContent = 'Luk';
+    closeButton6.addEventListener('click', closehangMan);
+    document.getElementById('hangManContainer').appendChild(closeButton6);
+
+
+
+
+
+
+
+}
+
+function flappyBird() {
+
+    // Opret et iframe-element
+    iframe7 = document.createElement('iframe');
+
+    // Sæt kilden for iframe til spinWheel.html
+
+    iframe7.src = 'spil/flappyBird.html';
+
+    // Sæt størrelsen på iframe
+    // Angiv stilen for i-framen ved hjælp af JavaScript
+    iframe7.style.width = '100%'; // Juster bredden af ​​i-framen
+    iframe7.style.height = '100%'; // Juster højden af ​​i-framen
+    iframe7.style.border = 'none'; // Fjern rammen for en mere sømløs integration
+    iframe7.style.position = 'absolute'; // Placer i-framen absolut
+    iframe7.style.top = '50%'; // Placer i-framen 50% fra toppen
+    iframe7.style.left = '50%'; // Placer i-framen 50% fra venstre
+    iframe7.style.transform = 'translate(-50%, -50%)'; // Juster placeringen for at centrere i-framen
+
+    // Indsæt iframe inden i det eksisterende element på din side
+    document.getElementById('flappyBirdContainer').appendChild(iframe7);
+
+    // Tilføj en knap til at lukke iframe'et
+    var closeButton7 = document.createElement('button');
+    closeButton7.id = 'closeButton'; // Sætter ID på knappen
+    closeButton7.textContent = 'Luk';
+    closeButton7.addEventListener('click', closeflappyBird);
+    document.getElementById('flappyBirdContainer').appendChild(closeButton7);
+
+}
+
+function stenSaksPapir() {
+
+    // Opret et iframe-element
+    iframe8 = document.createElement('iframe');
+
+    // Sæt kilden for iframe til spinWheel.html
+
+    iframe8.src = 'spil/stenSaksPapir.html';
+
+    // Sæt størrelsen på iframe
+    // Angiv stilen for i-framen ved hjælp af JavaScript
+    iframe8.style.width = '100%'; // Juster bredden af ​​i-framen
+    iframe8.style.height = '100%'; // Juster højden af ​​i-framen
+    iframe8.style.border = 'none'; // Fjern rammen for en mere sømløs integration
+    iframe8.style.position = 'absolute'; // Placer i-framen absolut
+    iframe8.style.top = '50%'; // Placer i-framen 50% fra toppen
+    iframe8.style.left = '50%'; // Placer i-framen 50% fra venstre
+    iframe8.style.transform = 'translate(-50%, -50%)'; // Juster placeringen for at centrere i-framen
+
+    // Indsæt iframe inden i det eksisterende element på din side
+    document.getElementById('stenSaksPapirContainer').appendChild(iframe8);
+
+    // Tilføj en knap til at lukke iframe'et
+    var closeButton8 = document.createElement('button');
+    closeButton8.id = 'closeButton'; // Sætter ID på knappen
+    closeButton8.textContent = 'Luk';
+    closeButton8.addEventListener('click', closestenSaksPapir);
+    document.getElementById('stenSaksPapirContainer').appendChild(closeButton8);
+
+
+}
+
+function reactionTest() {
+    // Opret et iframe-element
+    iframe9 = document.createElement('iframe');
+
+    // Sæt kilden for iframe til spinWheel.html
+
+    iframe9.src = 'spil/reactionTest.html';
+
+    // Sæt størrelsen på iframe
+    // Angiv stilen for i-framen ved hjælp af JavaScript
+    iframe9.style.width = '100%'; // Juster bredden af ​​i-framen
+    iframe9.style.height = '100%'; // Juster højden af ​​i-framen
+    iframe9.style.border = 'none'; // Fjern rammen for en mere sømløs integration
+    iframe9.style.position = 'absolute'; // Placer i-framen absolut
+    iframe9.style.top = '50%'; // Placer i-framen 50% fra toppen
+    iframe9.style.left = '50%'; // Placer i-framen 50% fra venstre
+    iframe9.style.transform = 'translate(-50%, -50%)'; // Juster placeringen for at centrere i-framen
+
+    // Indsæt iframe inden i det eksisterende element på din side
+    document.getElementById('reactionTestContainer').appendChild(iframe9);
+
+    // Tilføj en knap til at lukke iframe'et
+    var closeButton9 = document.createElement('button');
+    closeButton9.id = 'closeButton'; // Sætter ID på knappen
+    closeButton9.textContent = 'Luk';
+    closeButton9.addEventListener('click', closereactionTest);
+    document.getElementById('reactionTestContainer').appendChild(closeButton9);
+
+}
+
+function wordScrable() {
+
+    iframe10 = document.createElement('iframe');
+
+    iframe10.src = 'spil/wordScrable.html';
+
+    iframe10.style.width = '100%'; // Juster bredden af ​​i-framen
+    iframe10.style.height = '100%'; // Juster højden af ​​i-framen
+    iframe10.style.border = 'none'; // Fjern rammen for en mere sømløs integration
+    iframe10.style.position = 'absolute'; // Placer i-framen absolut
+    iframe10.style.top = '50%'; // Placer i-framen 50% fra toppen
+    iframe10.style.left = '50%'; // Placer i-framen 50% fra venstre
+    iframe10.style.transform = 'translate(-50%, -50%)'; // Juster placeringen for at centrere i-framen
+
+    document.getElementById('wordScrableContainer').appendChild(iframe10);
+
+    var closeButton10 = document.createElement('button');
+    closeButton10.id = 'closeButton'; // Sætter ID på knappen
+    closeButton10.textContent = 'Luk';
+    closeButton10.addEventListener('click', closewordScrable);
+    document.getElementById('wordScrableContainer').appendChild(closeButton10);
+
+}
+
+
+function closewordScrable() {
+    // Fjern iframe fra DOM'en
+    iframe10.parentNode.removeChild(iframe10);
+
+    // Fjern knappen til at lukke iframe'et
+    this.parentNode.removeChild(this); // 'this' refererer til knappen, der udløste funktionen
+
+}
+
+
+
+
+
+function closereactionTest() {
+
+    // Fjern iframe fra DOM'en
+    iframe9.parentNode.removeChild(iframe9);
+
+    // Fjern knappen til at lukke iframe'et
+    this.parentNode.removeChild(this); // 'this' refererer til knappen, der udløste funktionen
+}
+
+
+
+
+
+
+
+
+function closestenSaksPapir() {
+    // Fjern iframe fra DOM'en
+    iframe8.parentNode.removeChild(iframe8);
+
+    // Fjern knappen til at lukke iframe'et
+    this.parentNode.removeChild(this); // 'this' refererer til knappen, der udløste funktionen
+}
+
+
+
+function closeflappyBird() {
+    // Fjern iframe fra DOM'en
+    iframe7.parentNode.removeChild(iframe7);
+
+    // Fjern knappen til at lukke iframe'et
+    this.parentNode.removeChild(this); // 'this' refererer til knappen, der udløste funktionen
+}
+
+
+function closehangMan() {
+    // Fjern iframe fra DOM'en
+    iframe6.parentNode.removeChild(iframe6);
+
+    // Fjern knappen til at lukke iframe'et
+    this.parentNode.removeChild(this); // 'this' refererer til knappen, der udløste funktionen
+}
+
+
+
+
+
 
 
 function closeblackJack() {
