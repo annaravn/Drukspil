@@ -209,6 +209,9 @@ document.getElementById('toggleCheckbox').addEventListener('change', function() 
       case "huskeSpil":
       if(checkboxStatus){huskeSpil()};
       break;
+      case "blackJack":
+      if(checkboxStatus){blackJack()};
+      break;
     }
     
     console.log(data.navn, "Yay, et spil!");

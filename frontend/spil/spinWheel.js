@@ -2,6 +2,7 @@ let iframe; // Deklareret uden for funktionen, så den er global og kan tilgås 
 let iframe2;
 let iframe3;
 let iframe4;
+let iframe5;
 
 
 function spinWheel() {
@@ -138,6 +139,50 @@ function huskeSpil() {
 
 }
 
+
+function blackJack() {
+    // Opret et iframe-element
+    iframe5 = document.createElement('iframe');
+   
+    // Sæt kilden for iframe til spinWheel.html
+    iframe5.src = 'spil/blackJack.html';
+    
+    // Sæt størrelsen på iframe
+    // Angiv stilen for i-framen ved hjælp af JavaScript
+    iframe5.style.width = '100%'; // Juster bredden af ​​i-framen
+    iframe5.style.height = '100%'; // Juster højden af ​​i-framen
+    iframe5.style.border = 'none'; // Fjern rammen for en mere sømløs integration
+    iframe5.style.position = 'absolute'; // Placer i-framen absolut
+    iframe5.style.top = '50%'; // Placer i-framen 50% fra toppen
+    iframe5.style.left = '50%'; // Placer i-framen 50% fra venstre
+    iframe5.style.transform = 'translate(-50%, -50%)'; // Juster placeringen for at centrere i-framen
+    
+    
+    // Indsæt iframe inden i det eksisterende element på din side
+    document.getElementById('blackJackContainer').appendChild(iframe5);
+    
+    // Tilføj en knap til at lukke iframe'et
+    var closeButton5 = document.createElement('button');
+    closeButton5.id = 'closeButton'; // Sætter ID på knappen
+    closeButton5.textContent = 'Luk';
+    closeButton5.addEventListener('click', closeblackJack);
+    document.getElementById('blackJackContainer').appendChild(closeButton5);
+
+
+
+
+
+
+}
+
+
+function closeblackJack() {
+    // Fjern iframe fra DOM'en
+    iframe5.parentNode.removeChild(iframe5);
+    
+    // Fjern knappen til at lukke iframe'et
+    this.parentNode.removeChild(this); // 'this' refererer til knappen, der udløste funktionen
+}
 
 
 
