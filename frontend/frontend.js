@@ -200,7 +200,17 @@ document.getElementById('toggleCheckbox').addEventListener('change', function() 
       case "spinWheel":
         if(checkboxStatus){spinWheel()};
         break;
+      case "talGeat":
+        if(checkboxStatus){talGeat()};
+        break;
+      case "WhackAMole":
+      if(checkboxStatus){WhackAMole()};
+      break;
+      case "huskeSpil":
+      if(checkboxStatus){huskeSpil()};
+      break;
     }
+    
     console.log(data.navn, "Yay, et spil!");
   }
 
