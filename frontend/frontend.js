@@ -6,6 +6,7 @@ let inputs = {}; // Objekt til at gemme inputfelterne
 let person = "";
 let person1 = "";
 let driktårer = "4";
+let checkboxStatus = true; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
 
 document.getElementById("createButton").addEventListener("click", createInputField);
 
@@ -80,10 +81,6 @@ TJEKBOKS.style.display = "none";
 valgmuligheder.style.display = "none";
 
 // Tilføj en knap til at skjule og vise inputfelter
-
-
-
-
 
 
 function updateVariable(variableName) {
@@ -199,7 +196,7 @@ function HåndterUdfordring() {
 
 
 
-let checkboxStatus = true; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
+
 
 // Tilføj en event listener til checkboxen for at håndtere ændringer
 document.getElementById('toggleCheckbox').addEventListener('change', function() {
@@ -207,12 +204,6 @@ document.getElementById('toggleCheckbox').addEventListener('change', function() 
     console.log('Checkbox status:', checkboxStatus); // Logger den nye status i konsollen
 });
 
-
-
-
-
-
-  
 function HåndterSpil(data) {
   const spilActions = {
       hangMan: hangMan,
