@@ -54,31 +54,21 @@ function removeInputField() {
 
 
 
-// Funktion til at skjule inputfelter
+// Funktion til at skifte synligheden af inputfelter og knapper
 function toggleInputFieldsVisibility() {
-  const container = document.getElementById("container"); // Find containeren for inputfelter
-  const fjerneknap = document.getElementById("fjerneknap"); // Find containeren for inputfelter
-  const TJEKBOKS = document.getElementById("TJEKBOKS"); // Find containeren for inputfelter
-  if (container.style.display === "none") {
-      container.style.display = "block"; // Vis inputfelterne, hvis de er skjulte
-      fjerneknap.style.display = "block";
-      TJEKBOKS.style.display = "block";
-      valgmuligheder.style.display = "block";
+  // Samler elementerne for nem adgang
+  const elements = [document.getElementById("container"), document.getElementById("fjerneknap"), document.getElementById("TJEKBOKS"), document.getElementById("valgmuligheder")];
 
-
-    
-  } else {
-      container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
-      fjerneknap.style.display = "none";
-      TJEKBOKS.style.display = "none";
-      valgmuligheder.style.display = "none";
-  }
+  // Skifter synlighed baseret på nuværende tilstand af 'container'
+  const displayStyle = elements[0].style.display === "none" ? "block" : "none";
+  elements.forEach(element => element.style.display = displayStyle);
 }
 
-container.style.display = "none"; // Skjul inputfelterne, hvis de er synlige
-fjerneknap.style.display = "none";
-TJEKBOKS.style.display = "none";
-valgmuligheder.style.display = "none";
+// Initialiserer elementernes synlighed til 'none' ved indlæsning
+document.addEventListener('DOMContentLoaded', () => {
+  toggleInputFieldsVisibility();
+});
+
 
 // Tilføj en knap til at skjule og vise inputfelter
 
