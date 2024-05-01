@@ -52,8 +52,6 @@ function removeInputField() {
 }
 
 
-
-
 // Funktion til at skifte synligheden af inputfelter og knapper
 function toggleInputFieldsVisibility() {
   // Samler elementerne for nem adgang
@@ -84,16 +82,6 @@ function updateVariable(variableName) {
     console.log("Variabel " + variableName + " er opdateret: " + window[variableName]);
    
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -128,9 +116,6 @@ document.getElementById('optionsSelect').addEventListener('change', function() {
 
 function HåndterUdfordring() {
 
-  
-  
-  
   let tilfældigtIndex = random();
   let tilfældigtIndex1 = random();
   
@@ -139,8 +124,6 @@ function HåndterUdfordring() {
     tilfældigtIndex1 = random();
   }
     
-
-
   let variabelNavn = "variable" + tilfældigtIndex;
   let variabelNavn1 = "variable" + tilfældigtIndex1;
   person = window[variabelNavn];
@@ -148,14 +131,6 @@ function HåndterUdfordring() {
   
   console.log("Valgt person:", person);
  
-  
-  
-
-
-
-  
-
-
   fetch("/kortTekst")
     .then((response) => response.json())
     .then((data) => {
@@ -183,8 +158,6 @@ function HåndterUdfordring() {
     .catch((error) => console.error("Error:", error));
     console.log(inputCounter);
 }
-
-
 
 
 
