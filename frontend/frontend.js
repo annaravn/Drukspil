@@ -51,6 +51,8 @@ function removeInputField() {
 }
 
 
+
+
 // Funktion til at skjule inputfelter
 function toggleInputFieldsVisibility() {
   const container = document.getElementById("container"); // Find containeren for inputfelter
@@ -211,41 +213,27 @@ document.getElementById('toggleCheckbox').addEventListener('change', function() 
 
 
   
-  function HåndterSpil(data) {
-    const spil = data.navn;
-    switch(spil) {
-      case "hangMan":
-       if(checkboxStatus){hangMan();}; 
-        break;
-      case "flappyBird":
-        if(checkboxStatus){flappyBird();};
-        break;
-      case "spinWheel":
-        if(checkboxStatus){spinWheel()};
-        break;
-      case "talGeat":
-        if(checkboxStatus){talGeat()};
-        break;
-      case "WhackAMole":
-      if(checkboxStatus){WhackAMole()};
-      break;
-      case "huskeSpil":
-      if(checkboxStatus){huskeSpil()};
-      break;
-      case "blackJack":
-      if(checkboxStatus){blackJack()};
-      break;
-      case "stenSaksPapir":
-      if(checkboxStatus){stenSaksPapir()};
-      break;
-      case "reactionTest":
-      if(checkboxStatus){reactionTest()};
-      break;
-      case "wordScrable":
-      if(checkboxStatus){wordScrable()};
-      break;
-    }
-    
-    console.log(data.navn, "Yay, et spil!");
+function HåndterSpil(data) {
+  const spilActions = {
+      hangMan: hangMan,
+      flappyBird: flappyBird,
+      spinWheel: spinWheel,
+      talGeat: talGeat,
+      WhackAMole: WhackAMole,
+      huskeSpil: huskeSpil,
+      blackJack: blackJack,
+      stenSaksPapir: stenSaksPapir,
+      reactionTest: reactionTest,
+      wordScrable: wordScrable
+  };
+
+  // Hent funktionen baseret på spillets navn, hvis den findes, og spillet er aktiveret
+  const spilNavn = data.navn;
+  const spilFunktion = spilActions[spilNavn];
+
+  if (checkboxStatus && spilFunktion) {
+      spilFunktion(); // Kører den relevante funktion hvis spillet er aktiveret
+      console.log(spilNavn, "Yay, et spil!");
   }
+}
 
