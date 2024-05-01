@@ -1,13 +1,13 @@
 [
-{"id": 51,"navn": "hangMan"}, 
-{"id": 52, "navn": "flappyBird"},
-{"id": 53, "navn": "spinWheel"},
-{"id": 54, "navn": "talGeat"},
-{"id": 55, "navn": "WhackAMole"},
-{"id": 56, "navn": "huskeSpil"},
-{"id": 57, "navn": "blackJack"},
-{"id": 58, "navn": "stenSaksPapir"},
-{"id": 59, "navn": "reactionTest"},
-{"id": 60, "navn": "wordScrable"}
+{"id": 81,"navn": "hangMan"}, 
+{"id": 82, "navn": "flappyBird"},
+{"id": 83, "navn": "spinWheel"},
+{"id": 84, "navn": "talGeat"},
+{"id": 85, "navn": "WhackAMole"},
+{"id": 86, "navn": "huskeSpil"},
+{"id": 87, "navn": "blackJack"},
+{"id": 88, "navn": "stenSaksPapir"},
+{"id": 89, "navn": "reactionTest"},
+{"id": 90, "navn": "wordScrable"}
 
 ]
