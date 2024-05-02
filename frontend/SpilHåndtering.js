@@ -15,7 +15,7 @@ function spinWheel() {
     iframe = document.createElement('iframe');
     
     // Sæt kilden for iframe til spinWheel.html
-    iframe.src = 'spil/spinWheel.html';
+    iframe.src = 'spil/html/spinWheel.html';
     
     // Sæt størrelsen på iframe
     // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -44,7 +44,7 @@ function talGeat() {
      iframe2 = document.createElement('iframe');
     
      // Sæt kilden for iframe til spinWheel.html
-     iframe2.src = 'spil/talGeat.html';
+     iframe2.src = 'spil/html/talGeat.html';
      
      // Sæt størrelsen på iframe
      // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -79,7 +79,7 @@ function WhackAMole() {
     iframe3 = document.createElement('iframe');
    
     // Sæt kilden for iframe til spinWheel.html
-    iframe3.src = 'spil/WhackAMole.html';
+    iframe3.src = 'spil/html/WhackAMole.html';
     
     // Sæt størrelsen på iframe
     // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -114,7 +114,7 @@ function huskeSpil() {
     iframe4 = document.createElement('iframe');
    
     // Sæt kilden for iframe til spinWheel.html
-    iframe4.src = 'spil/huskeSpil.html';
+    iframe4.src = 'spil/html/huskeSpil.html';
     
     // Sæt størrelsen på iframe
     // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -150,7 +150,7 @@ function blackJack() {
     iframe5 = document.createElement('iframe');
    
     // Sæt kilden for iframe til spinWheel.html
-    iframe5.src = 'spil/blackJack.html';
+    iframe5.src = 'spil/html/blackJack.html';
     
     // Sæt størrelsen på iframe
     // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -172,20 +172,13 @@ function blackJack() {
     closeButton5.textContent = 'Luk';
     closeButton5.addEventListener('click', closeblackJack);
     document.getElementById('blackJackContainer').appendChild(closeButton5);
-
-
-
-
-
-
 }
-
 function hangMan() {
     // Opret et iframe-element
     iframe6 = document.createElement('iframe');
    
     // Sæt kilden for iframe til spinWheel.html
-    iframe6.src = 'spil/hangMan.html';
+    iframe6.src = 'spil/html/hangMan.html';
     
     // Sæt størrelsen på iframe
     // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -223,7 +216,7 @@ function flappyBird() {
 
     // Sæt kilden for iframe til spinWheel.html
 
-    iframe7.src = 'spil/flappyBird.html';
+    iframe7.src = 'spil/html/flappyBird.html';
 
     // Sæt størrelsen på iframe
     // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -254,7 +247,7 @@ function stenSaksPapir() {
 
     // Sæt kilden for iframe til spinWheel.html
 
-    iframe8.src = 'spil/stenSaksPapir.html';
+    iframe8.src = 'spil/html/stenSaksPapir.html';
 
     // Sæt størrelsen på iframe
     // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -285,7 +278,7 @@ function reactionTest() {
 
     // Sæt kilden for iframe til spinWheel.html
 
-    iframe9.src = 'spil/reactionTest.html';
+    iframe9.src = 'spil/html/reactionTest.html';
 
     // Sæt størrelsen på iframe
     // Angiv stilen for i-framen ved hjælp af JavaScript
@@ -313,7 +306,7 @@ function wordScrable() {
 
     iframe10 = document.createElement('iframe');
 
-    iframe10.src = 'spil/wordScrable.html';
+    iframe10.src = 'spil/html/wordScrable.html';
 
     iframe10.style.width = '100%'; // Juster bredden af ​​i-framen
     iframe10.style.height = '100%'; // Juster højden af ​​i-framen
