@@ -93,9 +93,9 @@ function random() {
 // Funktion til at opdatere padding baseret på tekstlængde
 function updatePadding(tekst) {
   const ordAntal = tekst.split(' ').length; // Beregn antallet af ord
-  const padding = ordAntal > 30 ? 70 : 50; // Juster værdierne som du ønsker
+  const padding = ordAntal > 30 ? 60 : 40; // Juster værdierne som du ønsker
   document.getElementById('kortHolder').style.padding = `${padding}px`;
-  const width = ordAntal > 30 ? 60 : 50; // Juster værdierne som du ønsker
+  const width = ordAntal > 30 ? 50 : 40; // Juster værdierne som du ønsker
   document.getElementById('kortHolder').style.width = `${width}vw`;
   
   
