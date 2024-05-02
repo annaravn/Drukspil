@@ -16,12 +16,81 @@
     <div id="knapHolder">
         <button id="hentTekst" onclick="HåndterUdfordring()">Ny Udfordring!</button>
     </div>
+
+    <div id="container">
+        <button id="createButton">Opret Inputfelt</button>
+    </div>
+
+    <br>
+
+    <div id="fjerneknap">
+        <button id="deletebutton" onclick="removeInputField()">Indput slettet</button>
+    </div>
+
+    <!-- Checkbox element -->
+
+    <br>
+
+    <div id="TJEKBOKS">
+        <label for="toggleCheckbox">Spil er aktivt</label>
+        <input type="checkbox" id="toggleCheckbox" checked>
+    </div>
+
+    <br>
+
+
+    <div id="valgmuligheder">
+        <label for="optionsSelect">Vælg en mulighed</label>
+        <select id="optionsSelect">
+            <option value="1">Mulighed 1</option>
+            <option value="2">Mulighed 2</option>
+            <option value="3" selected>Mulighed 3</option> <!-- Denne mulighed vil være valgt som standard -->
+            <option value="4">Mulighed 4</option>
+            <option value="5">Mulighed 5</option>
+        </select>
+    </div>
+    
+    
+
+   
+
+    
+
+   
  
     <div id="kortHolder"></div>
 
+    <div id="spinWheelContainer"></div>
+    <div id="talGeatContainer"></div>
+    <div id="WhackAMoleContainer"></div>
+    <div id="huskeSpilContainer"></div>
+    <div id="blackJackContainer"></div>
+    <div id="hangManContainer"></div>
+    <div id="flappyBirdContainer"></div>
+    <div id="stenSaksPapirContainer"></div>
+    <div id="reactionTestContainer"></div>
+    <div id="wordScrableContainer"></div>
+
+
+    <div id="SKJUL">
+        <!-- Billedknap til at skjule og vise inputfelter -->
+        <img src="Setting.png" alt="SKJUL" id="SKJUL" style="cursor: pointer;" onclick="toggleInputFieldsVisibility()">
+    </div>
+
     <script src="frontend.js"></script>
-    <script src="spil/testSpil.js"></script>
-    <script src="spil/russiskRulette.js"></script>
+    
+    <script src="spil/hangMan.js"></script>
+    <script src="spil/flappyBird.js"></script>
+    <script src="spil/spinWheel.js"></script>
+    <script src="spil/WhackAMole.js"></script>
+    <script src="spil/huskeSpil.js"></script>
+    <script src="spil/blackJack.js"></script>
+    <script src="spil/stenSaksPapir.js"></script>
+    <script src="spil/reactionTest.js"></script>
+    <script src="spil/wordScrable.js"></script>
+
+    
+   
 
 </body>
 </html>

@@ -40,15 +40,142 @@ h1 {
 }
 
 #kortHolder {
-    width: 30vw; /* Set width as needed */
-    height: 8vh;
+    width: 25vw;
+    height: 20vh;
+    min-height: 150px; /* Indstil en minimumshøjde på 150 pixels */
     background-color: #f0f0f0;
     padding: 50px;
-    margin: 20px auto; /* Center the card horizontally */
+    margin: 20px auto;
     text-align: center;
     border-radius: 10px;
+
 }
 
 #hentTekst:hover {
     background-color: #0056b3;
 }
+#SKJUL{
+
+    width: 13vw;
+
+}
+#container {
+    background-color: rgb(255, 255, 255); /* Grøn baggrundsfarve */
+    color: white; /* Hvid tekstfarve */
+    padding: 5px 5px; /* Polstring for størrelse */
+    text-align: center; /* Centreret tekst */
+    font-size: 1.5em; /* Større tekststørrelse */
+    font-weight: bold; /* Fed tekst */
+    border: none; /* Ingen kanter */
+    border-radius: 20px; /* Runde hjørner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Skyggeeffekt for dybde */
+    cursor: pointer; /* Cursor som en hånd når du holder musen over */
+    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Animation for klik og hover */
+    outline: none; /* Ingen kontur når den er i fokus */
+    margin-top: 10px; /* Afstand fra toppen */
+}
+
+#container:hover {
+    transform: scale(1.05); /* Let forstørrelse ved hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Større skygge ved hover */
+}
+
+#container:active {
+    transform: scale(0.95); /* Tryk-effekt når knappen er klikket */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skygge når knappen er klikket */
+}
+
+#fjerneknap {
+    background-color: rgb(255, 255, 255); /* Grøn baggrundsfarve */
+    color: white; /* Hvid tekstfarve */
+    padding: 5px 5px; /* Polstring for størrelse */
+    text-align: center; /* Centreret tekst */
+    font-size: 1.5em; /* Større tekststørrelse */
+    font-weight: bold; /* Fed tekst */
+    border: none; /* Ingen kanter */
+    border-radius: 20px; /* Runde hjørner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Skyggeeffekt for dybde */
+    cursor: pointer; /* Cursor som en hånd når du holder musen over */
+    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Animation for klik og hover */
+    outline: none; /* Ingen kontur når den er i fokus */
+    margin-top: 10px; /* Afstand fra toppen */
+}
+
+#fjerneknap:hover {
+    transform: scale(1.05); /* Let forstørrelse ved hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Større skygge ved hover */
+}
+
+#fjerneknap:active {
+    transform: scale(0.95); /* Tryk-effekt når knappen er klikket */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skygge når knappen er klikket */
+}
+#closeButton {
+    /* Her kan du tilføje dine CSS styles */
+    background-color: #f44336; /* Rød baggrundsfarve for eksempel */
+    color: white; /* Hvid tekst */
+    /* Eksisterende stilarter */
+    position: fixed; /* Fastgør knappen til en position på skærmen */
+    left: 50%; /* Centrerer knappen horisontalt */
+   
+    transform: translateX(-50%) translateY(50%); /* Flytter knappen op og centrere den horisontalt */
+    z-index: 1000; /* Sørger for at knappen ligger over andre elementer */
+    padding: 30px 150px; /* Større polstring for at gøre knappen større */
+    font-size: 2rem; /* Større skriftstørrelse, juster efter behov */
+    top: 80%; /* Placer knappen 80% fra toppen af skærmen */
+}
+label[for="toggleCheckbox"] {
+    display: inline-block; /* Gør det muligt at sætte margin */
+    margin-right: 10px; /* Tilføj lidt plads mellem label og checkbox */
+    cursor: pointer; /* Gør musemarkøren til en hånd, når du holder over label */
+    font-size: 1.2rem; /* Større tekststørrelse for bedre læsbarhed */
+    color: #fff;
+}
+
+/* Custom style for checkbox */
+#toggleCheckbox {
+    accent-color: green; /* Skifter farven på checkboxen når den er markeret */
+    cursor: pointer; /* Gør musemarkøren til en hånd, når du holder over checkbox */
+    transform: scale(1.5); /* Forstørrer checkboxen for bedre tilgængelighed */
+    margin: 5px; /* Lidt plads omkring checkboxen */
+
+}
+
+
+#valgmuligheder {
+    padding: 25px;
+    max-width: 350px; /* Justeret bredde for bedre visning */
+    background-color: #ffffff; /* Ren hvid for at fremhæve elementet */
+    border-radius: 10px; /* Mere markante afrundede hjørner */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Dybere og mere markant skygge */
+    text-align: center; /* Sørger for at teksten er centreret */
+}
+
+#optionsSelect {
+    width: 100%;
+    padding: 12px 10px; /* Lidt mere padding for bedre klikbarhed */
+    border-radius: 6px; /* Blødere kanter */
+    border: 2px solid #dee2e6; /* Solid og subtil kant */
+    background-color: #f8f9fa; /* En anelse grå baggrund for at skille sig ud fra hvid */
+    color: #495057; /* Mørkere grå for bedre læsbarhed */
+    cursor: pointer;
+    transition: all 0.3s; /* Glat transition for hover og focus */
+}
+
+#optionsSelect:focus {
+    outline: none;
+    border-color: #007bff; /* Lyseblå fremhævning ved fokus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtil glorie-effekt */
+}
+
+option {
+    padding: 10px; /* Ensartet padding for alle valgmuligheder */
+    background-color: #fff; /* Hvid baggrund for at sikre læsbarhed */
+}
+
+/* Farvetema til hver mulighed for visuel differentiering */
+option[value="mulighed1"] { background-color: #f0fff4; } /* Blød mint */
+option[value="mulighed2"] { background-color: #c6f6d5; } /* Lys grøn */
+option[value="mulighed3"] { background-color: #9ae6b4; } /* Mellemliggende grøn */
+option[value="mulighed4"] { background-color: #68d391; } /* Frisk grøn */
+option[value="mulighed5"] { background-color: #38a169; } /* Dyb grøn */
