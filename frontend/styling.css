@@ -1,6 +1,7 @@
 body {
     background-image: url('drukspil_baggrund.png');
     background-size: cover;
+    background-attachment: fixed; /* Holder baggrunden fast på sin plads */
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
