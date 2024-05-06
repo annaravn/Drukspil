@@ -62,7 +62,7 @@ function toggleInputFieldsVisibility() {
   ];
 
   // Skifter synlighed baseret på nuværende tilstand af 'container'
-  const displayStyle = elements[0].style.display === "none" ? "block" : "none";
+  const displayStyle = elements[0].style.display === "block" ? "none" : "block";
   elements.forEach((element) => (element.style.display = displayStyle));
 }
 
@@ -139,7 +139,7 @@ function HåndterUdfordring() {
 
   console.log("Valgt person:", person);
 
-  fetch("/kortTekst")
+  fetch("/hentUdfordringer")
     .then((response) => response.json())
     .then((data) => {
       if (data.type === "kort") {
