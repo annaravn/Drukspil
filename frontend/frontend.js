@@ -3,8 +3,11 @@ let inputs = {};
 let person = "";
 let person1 = "";
 let selectedOption = 3;
-let checkboxStatus = true; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
+let checkboxStatus = false; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
 
+
+createInputField(); // Opret det første inputfelt ved indlæsning
+createInputField(); // Opret det andet inputfelt ved indlæsning
 
 document
   .getElementById("createButton")
