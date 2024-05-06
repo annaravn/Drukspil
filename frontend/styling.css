@@ -58,6 +58,10 @@ h1 {
 #SKJUL{
 
     width: 13vw;
+    position: fixed;  /* Gør positionen fast på skærmen */
+    top: 0;           /* Placerer øverst på skærmen */
+    left: 0;          /* Placerer i venstre hjørne af skærmen */
+
 
 }
 #container {
