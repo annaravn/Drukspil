@@ -52,7 +52,7 @@ function removeInputField() {
 }
 
 // Funktion til at skifte synligheden af inputfelter og knapper
-function toggleInputFieldsVisibility() {
+function toggleSettings() {
   // Samler elementerne for nem adgang
   const elements = [
     document.getElementById("container"),
@@ -62,13 +62,13 @@ function toggleInputFieldsVisibility() {
   ];
 
   // Skifter synlighed baseret på nuværende tilstand af 'container'
-  const displayStyle = elements[0].style.display === "none" ? "block" : "none";
+  const displayStyle = elements[0].style.display === "block" ? "none" : "block";
   elements.forEach((element) => (element.style.display = displayStyle));
 }
 
 // Initialiserer elementernes synlighed til 'none' ved indlæsning
 document.addEventListener("DOMContentLoaded", () => {
-  toggleInputFieldsVisibility();
+  toggleSettings();
 });
 
 // Tilføj en knap til at skjule og vise inputfelter
@@ -139,7 +139,7 @@ function HåndterUdfordring() {
 
   console.log("Valgt person:", person);
 
-  fetch("/kortTekst")
+  fetch("/hentUdfordringer")
     .then((response) => response.json())
     .then((data) => {
       if (data.type === "kort") {

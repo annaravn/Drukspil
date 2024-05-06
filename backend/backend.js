@@ -87,7 +87,7 @@ lavSpil((err, spil) => {
 });
 
 // Endpoint to get a card text
-app.get("/kortTekst", (req, res) => {
+app.get("/hentUdfordringer", (req, res) => {
   // Combine kortSamling and spilSamling into one array
   const combinedSamling = kortSamling.concat(spilSamling);
   // Ensure i doesn't exceed combinedSamling length
