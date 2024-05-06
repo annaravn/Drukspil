@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Det Ultimative Drukspil</title>
-    <link rel="stylesheet" href="styling.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-</head> 
+    <link rel="stylesheet" href="styling.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
     <header>
-        <h1>Det Ultimative Drukspil</h1>
+      <h1>Det Ultimative Drukspil</h1>
     </header>
     <div id="knapHolder">
-        <button id="hentTekst" onclick="HåndterUdfordring()">Ny Udfordring!</button>
+      <button id="hentTekst" onclick="HåndterUdfordring()">
+        Ny Udfordring!
+      </button>
     </div>
 
     <div id="container">
-        <button id="createButton">Tilføj spiller</button>
+      <button id="createButton">Tilføj spiller</button>
     </div>
 
-    <br>
+    <br />
 
     <div id="fjerneknap">
-        <button id="deletebutton" onclick="removeInputField()">Slet navne</button>
+      <button id="deletebutton" onclick="removeInputField()">Slet navne</button>
     </div>
 
     <!-- Checkbox element -->
 
-    <br>
+    <br />
 
     <div id="TJEKBOKS">
-        <label for="toggleCheckbox">Spil er aktivt</label>
-        <input type="checkbox" id="toggleCheckbox" checked>
+      <label for="toggleCheckbox">Spil er aktivt</label>
+      <input type="checkbox" id="toggleCheckbox" checked />
     </div>
 
-    <br>
-
+    <br />
 
     <div id="valgmuligheder">
-        <label for="optionsSelect">Vælg en mulighed</label>
-        <select id="optionsSelect">
-            <option value="1">Mulighed 1</option>
-            <option value="2">Mulighed 2</option>
-            <option value="3" selected>Mulighed 3</option> <!-- Denne mulighed vil være valgt som standard -->
-            <option value="4">Mulighed 4</option>
-            <option value="5">Mulighed 5</option>
-        </select>
+      <label for="optionsSelect">Hvor stive vil i være?</label>
+      <select id="optionsSelect">
+        <option value="1">Pinlig ædru</option>
+        <option value="2">Lettere tipsy</option>
+        <option value="3" selected>Godt kørende</option>
+        <!-- Denne mulighed vil være valgt som standard -->
+        <option value="4">Pænt bedugget</option>
+        <option value="5">Bankelam</option>
+      </select>
     </div>
-    
-    
 
-   
-
-    
-
-   
- 
     <div id="kortHolder"></div>
 
     <div id="spinWheelContainer"></div>
@@ -71,14 +71,19 @@
     <div id="reactionTestContainer"></div>
     <div id="wordScrableContainer"></div>
 
-
     <div id="SKJUL">
-        <!-- Billedknap til at skjule og vise inputfelter -->
-        <img src="Setting.png" alt="SKJUL" id="SKJUL" style="cursor: pointer;" onclick="toggleSettings()">
+      <!-- Billedknap til at skjule og vise inputfelter -->
+      <img
+        src="Setting.png"
+        alt="SKJUL"
+        id="SKJUL"
+        style="cursor: pointer"
+        onclick="toggleSettings()"
+      />
     </div>
 
     <script src="frontend.js"></script>
-    
+
     <script src="spil/scripts/hangMan.js"></script>
     <script src="spil/scripts/flappyBird.js"></script>
     <script src="SpilHåndtering.js"></script>
@@ -88,9 +93,5 @@
     <script src="spil/scripts/stenSaksPapir.js"></script>
     <script src="spil/scripts/reactionTest.js"></script>
     <script src="spil/scripts/wordScrable.js"></script>
-
-    
-   
-
-</body>
+  </body>
 </html>

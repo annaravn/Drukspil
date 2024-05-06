@@ -2,7 +2,7 @@ let inputCounter = 0;
 let inputs = {}; // Objekt til at gemme inputfelterne
 let person = "";
 let person1 = "";
-let driktårer = "4";
+let selectedOption = 3;
 let checkboxStatus = true; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
 
 document
@@ -15,13 +15,13 @@ function createInputField() {
   input.type = "text";
   let variableName = "variable" + inputCounter;
   input.id = "input" + inputCounter; // Tildel et unikt ID til inputfeltet
-  input.placeholder = "Input " + inputCounter; // Tilføj placeholder
+  input.placeholder = "Spiller " + (inputCounter + 1); // Tilføj placeholder
 
   // Tilføj inputfeltet til DOM'en
   document.getElementById("container").appendChild(input);
 
-  // Gem inputfeltet i objektet med variabelnavnet som nøgle
-  inputs[variableName] = input;
+  // Gem inputfeltet i objektet med variabelnavnet som nøgle{
+    inputs[variableName] = input;
 
   // Opdater variablen med værdien fra det nye inputfelt
   input.addEventListener("input", function () {
@@ -90,6 +90,10 @@ function random() {
   return Math.floor(Math.random() * inputCounter);
 }
 
+function randomTåre(tal) {
+  return Math.floor(Math.random() * tal + 1);
+}
+
 // Funktion til at opdatere padding baseret på tekstlængde
 function updatePadding(tekst) {
   const ordAntal = tekst.split(" ").length; // Beregn antallet af ord
@@ -102,30 +106,29 @@ function updatePadding(tekst) {
 document
   .getElementById("optionsSelect")
   .addEventListener("change", function () {
-    var selectedOption = parseInt(this.value); // Henter og konverterer værdien af den valgte mulighed til en streng
+    selectedOption = parseInt(this.value); // Henter og konverterer værdien af den valgte mulighed til en streng
     console.log("Valgt mulighed:", selectedOption); // Logger den valgte mulighed i konsollen som en streng
-
-    // Opdater 'driktårer' med den nye værdi af 'selectedOption'
-    driktårer = selectedOption * random(1,3);
   });
 
 function HåndterUdfordring() {
+  let driktårer = selectedOption * randomTåre(2) + randomTåre(3);
+
   let tilfældigtIndex = random(inputCounter);
   let tilfældigtIndex1 = random(inputCounter);
 
   while (true) {
     if (inputCounter < 2) {
-      alert("Du skal have mindst 2 inputfelter");
+      alert("Du skal tilføje mindst to spillere");
+      break;
+    } else if (inputCounter === 2) {
       if (tilfældigtIndex === 1) {
         tilfældigtIndex1 = 0;
         break;
-      }
-      else {
+      } else {
         tilfældigtIndex1 = 1;
         break;
       }
-    }
-    if (tilfældigtIndex === tilfældigtIndex1) {
+    } else if (tilfældigtIndex === tilfældigtIndex1) {
       tilfældigtIndex1 = random(inputCounter);
     } else {
       break;
@@ -195,6 +198,5 @@ function HåndterSpil(data) {
 
   if (checkboxStatus && spilFunktion) {
     spilFunktion(); // Kører den relevante funktion hvis spillet er aktiveret
-    console.log(spilNavn, "Yay, et spil!");
   }
 }
