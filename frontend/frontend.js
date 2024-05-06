@@ -1,9 +1,10 @@
 let inputCounter = 0;
-let inputs = {}; // Objekt til at gemme inputfelterne
+let inputs = {};
 let person = "";
 let person1 = "";
 let selectedOption = 3;
 let checkboxStatus = true; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
+
 
 document
   .getElementById("createButton")
@@ -21,7 +22,7 @@ function createInputField() {
   document.getElementById("container").appendChild(input);
 
   // Gem inputfeltet i objektet med variabelnavnet som nøgle{
-    inputs[variableName] = input;
+  inputs[variableName] = input;
 
   // Opdater variablen med værdien fra det nye inputfelt
   input.addEventListener("input", function () {
@@ -140,7 +141,12 @@ function HåndterUdfordring() {
   person = window[variabelNavn];
   person1 = window[variabelNavn1];
 
-  console.log("Valgt person:", person);
+  if (person === undefined) {
+    person = "Spiller 1";
+  }
+  if (person1 === undefined) {
+    person1 = "Spiller 2";
+  }
 
   fetch("/hentUdfordringer")
     .then((response) => response.json())
@@ -167,7 +173,6 @@ function HåndterUdfordring() {
     })
 
     .catch((error) => console.error("Error:", error));
-  console.log(inputCounter);
 }
 
 // Tilføj en event listener til checkboxen for at håndtere ændringer
