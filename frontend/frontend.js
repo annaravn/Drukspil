@@ -52,7 +52,7 @@ function removeInputField() {
 }
 
 // Funktion til at skifte synligheden af inputfelter og knapper
-function toggleInputFieldsVisibility() {
+function toggleSettings() {
   // Samler elementerne for nem adgang
   const elements = [
     document.getElementById("container"),
@@ -68,7 +68,7 @@ function toggleInputFieldsVisibility() {
 
 // Initialiserer elementernes synlighed til 'none' ved indlæsning
 document.addEventListener("DOMContentLoaded", () => {
-  toggleInputFieldsVisibility();
+  toggleSettings();
 });
 
 // Tilføj en knap til at skjule og vise inputfelter
