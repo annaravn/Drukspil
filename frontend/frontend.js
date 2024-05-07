@@ -28,13 +28,25 @@ function createInputField() {
 
   // Opdater variablen med værdien fra det nye inputfelt
   input.addEventListener("input", function () {
-    updateVariable(variableName);
+    updateInputVariable(variableName);
   });
 
   // Øg tælleren for inputfelter
   inputCounter++;
 }
 
+function updateInputVariable(variableName) {
+  // Find det tilsvarende inputfelt baseret på variabelnavnet
+  let inputId = variableName.replace("variable", "input");
+  let inputValue = document.getElementById(inputId).value;
+
+  // Opret den nye variabel med inputfeltets værdi
+  window[variableName] = inputValue;
+
+  console.log(
+    "Variabel " + variableName + " er opdateret: " + window[variableName]
+  );
+}
 // Tilføj en funktion til at fjerne inputfelter og de tilknyttede variabler
 function removeInputField() {
   if (inputCounter >= 1) {
@@ -67,34 +79,12 @@ function toggleSettings() {
   elements.forEach((element) => (element.style.display = displayStyle));
 }
 
-function updateVariable(variableName) {
-  // Find det tilsvarende inputfelt baseret på variabelnavnet
-  let inputId = variableName.replace("variable", "input");
-  let inputValue = document.getElementById(inputId).value;
-
-  // Opret den nye variabel med inputfeltets værdi
-  window[variableName] = inputValue;
-
-  console.log(
-    "Variabel " + variableName + " er opdateret: " + window[variableName]
-  );
-}
-
 function random() {
   return Math.floor(Math.random() * inputCounter);
 }
 
 function randomTåre(tal) {
   return Math.floor(Math.random() * tal + 1);
-}
-
-// Funktion til at opdatere padding baseret på tekstlængde
-function updatePadding(tekst) {
-  const ordAntal = tekst.split(" ").length; // Beregn antallet af ord
-  const padding = ordAntal > 30 ? 60 : 40; // Juster værdierne som du ønsker
-  document.getElementById("kortHolder").style.padding = `${padding}px`;
-  const width = ordAntal > 30 ? 50 : 40; // Juster værdierne som du ønsker
-  document.getElementById("kortHolder").style.width = `${width}vw`;
 }
 
 document
@@ -144,10 +134,10 @@ function HåndterUdfordring() {
   fetch("/hentUdfordringer")
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       if (data.type === "kort") {
         const kortHolder = document.getElementById("kortHolder");
         kortHolder.innerHTML = "";
-        console.log(data);
         // Erstat "[person1]" med "Mikkel" i teksten
         let tekst = data.tekst.replace(/\[person1\]/g, person);
         tekst = tekst.replace(/\[person2\]/g, person1);
@@ -158,9 +148,8 @@ function HåndterUdfordring() {
         kortHolder.appendChild(tekstHolder);
         updatePadding(data.tekst);
       } else if (data.type === "spil") {
-        console.log("Her var et spil");
         if (checkboxStatus) {
-        HåndterSpil(data);
+          HåndterSpil(data);
         }
       } else {
         console.log("Fejl: hverken kort eller spil");
@@ -177,6 +166,14 @@ document
     checkboxStatus = this.checked; // Ændrer værdien af checkboxStatus baseret på om checkboxen er checked eller ej
     console.log("Checkbox status:", checkboxStatus); // Logger den nye status i konsollen
   });
+// Funktion til at opdatere padding baseret på tekstlængde
+function updatePadding(tekst) {
+  const ordAntal = tekst.split(" ").length; // Beregn antallet af ord
+  const padding = ordAntal > 30 ? 60 : 40; // Juster værdierne som du ønsker
+  document.getElementById("kortHolder").style.padding = `${padding}px`;
+  const width = ordAntal > 30 ? 50 : 40; // Juster værdierne som du ønsker
+  document.getElementById("kortHolder").style.width = `${width}vw`;
+}
 
 function HåndterSpil(data) {
   const spilActions = {
