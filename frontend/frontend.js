@@ -5,7 +5,6 @@ let person1 = "";
 let selectedOption = 3;
 let checkboxStatus = false; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
 
-
 createInputField(); // Opret det første inputfelt ved indlæsning
 createInputField(); // Opret det andet inputfelt ved indlæsning
 
@@ -34,8 +33,6 @@ function createInputField() {
 
   // Øg tælleren for inputfelter
   inputCounter++;
-
-  console.log(inputCounter);
 }
 
 // Tilføj en funktion til at fjerne inputfelter og de tilknyttede variabler
@@ -69,13 +66,6 @@ function toggleSettings() {
   const displayStyle = elements[0].style.display === "block" ? "none" : "block";
   elements.forEach((element) => (element.style.display = displayStyle));
 }
-
-// Initialiserer elementernes synlighed til 'none' ved indlæsning
-document.addEventListener("DOMContentLoaded", () => {
-  toggleSettings();
-});
-
-// Tilføj en knap til at skjule og vise inputfelter
 
 function updateVariable(variableName) {
   // Find det tilsvarende inputfelt baseret på variabelnavnet
@@ -169,7 +159,9 @@ function HåndterUdfordring() {
         updatePadding(data.tekst);
       } else if (data.type === "spil") {
         console.log("Her var et spil");
+        if (checkboxStatus) {
         HåndterSpil(data);
+        }
       } else {
         console.log("Fejl: hverken kort eller spil");
       }
@@ -204,7 +196,7 @@ function HåndterSpil(data) {
   const spilNavn = data.navn;
   const spilFunktion = spilActions[spilNavn];
 
-  if (checkboxStatus && spilFunktion) {
+  if (spilFunktion) {
     spilFunktion(); // Kører den relevante funktion hvis spillet er aktiveret
   }
 }
