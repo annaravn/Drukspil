@@ -9,7 +9,7 @@ createInputField(); // Opret det første inputfelt ved indlæsning
 createInputField(); // Opret det andet inputfelt ved indlæsning
 
 document
-  .getElementById("createButton")
+  .getElementById("tilføjSpillerKnap")
   .addEventListener("click", createInputField);
 
 function createInputField() {
@@ -146,7 +146,7 @@ function HåndterUdfordring() {
         console.log(data); // Log det opdaterede data-objekt
         const tekstHolder = document.createTextNode(data.tekst);
         kortHolder.appendChild(tekstHolder);
-        updatePadding(data.tekst);
+        //updatePadding(data.tekst);
       } else if (data.type === "spil") {
         if (checkboxStatus) {
           HåndterSpil(data);
@@ -166,14 +166,7 @@ document
     checkboxStatus = this.checked; // Ændrer værdien af checkboxStatus baseret på om checkboxen er checked eller ej
     console.log("Checkbox status:", checkboxStatus); // Logger den nye status i konsollen
   });
-// Funktion til at opdatere padding baseret på tekstlængde
-function updatePadding(tekst) {
-  const ordAntal = tekst.split(" ").length; // Beregn antallet af ord
-  const padding = ordAntal > 30 ? 60 : 40; // Juster værdierne som du ønsker
-  document.getElementById("kortHolder").style.padding = `${padding}px`;
-  const width = ordAntal > 30 ? 50 : 40; // Juster værdierne som du ønsker
-  document.getElementById("kortHolder").style.width = `${width}vw`;
-}
+
 
 function HåndterSpil(data) {
   const spilActions = {

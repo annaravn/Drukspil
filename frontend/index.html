@@ -24,41 +24,41 @@
         Ny Udfordring!
       </button>
     </div>
-
-    <div id="container">
-      <button id="createButton">Tilføj spiller</button>
-    </div>
-
-    <br />
-
-    <div id="fjerneknap">
-      <button id="deletebutton" onclick="removeInputField()">Slet navne</button>
-    </div>
-
-    <!-- Checkbox element -->
-
-    <br />
-
+    <div id="kortHolder"></div>
+    <br id="settings"/> <br>
+    <div id="outer">
     <div id="TJEKBOKS">
       <label for="toggleCheckbox">Spil er aktivt</label>
+      
       <input type="checkbox" id="toggleCheckbox" unchecked />
     </div>
-
-    <br />
-
-    <div id="valgmuligheder">
-      <label for="optionsSelect">Hvor stive vil i være?</label>
-      <select id="optionsSelect">
-        <option value="1">Pinlig ædru</option>
-        <option value="2">Lettere tipsy</option>
-        <option value="3" selected>Godt kørende</option>
-        <!-- Denne mulighed vil være valgt som standard -->
-        <option value="4">Pænt bedugget</option>
-        <option value="5">Bankelam</option>
-      </select>
+    <div id="fjerneknap">
+        <button id="deletebutton" onclick="removeInputField()">Slet navne</button>
+      </div>
+    <div id="container">
+      <button id="tilføjSpillerKnap">Tilføj spiller</button>
+    
     </div>
+    <div id="valgmuligheder">
+        <label for="optionsSelect">Hvor stive vil i være?</label>
+        <select id="optionsSelect">
+          <option value="1">Pinlig ædru</option>
+          <option value="2">Lettere tipsy</option>
+          <option value="3" selected>Godt kørende</option>
+          <!-- Denne mulighed vil være valgt som standard -->
+          <option value="4">Pænt bedugget</option>
+          <option value="5">Bankelam</option>
+        </select>
+      </div>
+    </div>
+  
 
-    <div id="kortHolder"></div>
+  
+  
+    <!-- Checkbox element -->
+
+  
+
 
     <div id="spinWheelContainer"></div>
     <div id="talGeatContainer"></div>
@@ -83,7 +83,6 @@
     </div>
 
     <script src="frontend.js"></script>
-
     <script src="spil/scripts/hangMan.js"></script>
     <script src="spil/scripts/flappyBird.js"></script>
     <script src="SpilHåndtering.js"></script>

@@ -6,22 +6,41 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+/* Overlay with semi-transparent color */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
+    z-index: -2; /* Place the overlay behind the content */
+}
+
 
 header {
-
+    text-align: center;
     background-size: cover; /* Cover the entire header */
     background-position: center; /* Center the background image */
+
 }
 
 h1 {
     text-align: center;
-    margin-top: 10vh;
-    margin-bottom: 60px;
+    font-size: 3rem;
+    margin-top: 5vh;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    color: #ffffff; /* Change the color to dark gray */
 }
+
 
 #knapHolder {
     width: 100vw;
-    height: 20vh;
+    height: 22vh;
 
     /* Center the button horizontally */
 }
@@ -29,105 +48,144 @@ h1 {
 #hentTekst {
     margin: 20px auto;
     display:block; /* Change display to inline-block */
-    width: 250px; /* Set a fixed width */
-    height: 120px; /* Set a fixed height */
-    background-color: #007bff;
+    width: 70vw; /* Set a fixed width */
+    max-width: 300px;
+    height: 20vh; /* Set a fixed height */
+    background-color: #ff5e91;
     color: #fff;
     border: none;
     border-radius: 40px; /* Adjust border radius to make it square */
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'Poppins', sans-serif;
+    font-size: medium;
+}
+#hentTekst:hover {
+    background-color: #6dd1f0;
 }
 
 #kortHolder {
-    width: 25vw;
-    height: 20vh;
-    min-height: 150px; /* Indstil en minimumshøjde på 150 pixels */
-    background-color: #f0f0f0;
-    padding: 50px;
-    margin: 20px auto;
+    margin-top: 20px; /* Keep the top margin as 20px */
+    margin-right: auto; /* Center horizontally */
+    margin-bottom: 0; /* Set bottom margin to 0 */
+    margin-left: auto; /* Center horizontally */
+    width: 30vw;
+    min-width: 300px;
+    min-height: 20vh; /* Indstil en minimumshøjde på 150 pixels */
+    background-color: #ffffff;
+    padding: 30px;
     text-align: center;
     border-radius: 10px;
-
 }
 
-#hentTekst:hover {
-    background-color: #0056b3;
+#TJEKBOKS {
+    position: absolute;
+    top: 0vh;
+    left: 0%
 }
+
 #SKJUL{
 
-    width: 13vw;
+    width: 10vh;
     position: fixed;  /* Gør positionen fast på skærmen */
     top: 0;           /* Placerer øverst på skærmen */
     left: 0;          /* Placerer i venstre hjørne af skærmen */
-
-
+    padding: 3vw;    /* Tilføjer polstring for at gøre knappen større */
 }
+
+#outer {
+    position: relative;
+    width:100%;
+}
+
+
 #container {
+    position: absolute;
+    left: 0%;
+    top: 10vh;
     background-color: rgb(255, 255, 255); /* Grøn baggrundsfarve */
+    font-family: 'Poppins', sans-serif;
     color: white; /* Hvid tekstfarve */
-    padding: 5px 5px; /* Polstring for størrelse */
-    text-align: center; /* Centreret tekst */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    text-align: left; /* Centreret tekst */
     font-size: 1.5em; /* Større tekststørrelse */
     font-weight: bold; /* Fed tekst */
     border: none; /* Ingen kanter */
-    border-radius: 20px; /* Runde hjørner */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Skyggeeffekt for dybde */
+    border-radius: 10px; /* Mere markante afrundede hjørner */
     cursor: pointer; /* Cursor som en hånd når du holder musen over */
-    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Animation for klik og hover */
     outline: none; /* Ingen kontur når den er i fokus */
-    margin-top: 10px; /* Afstand fra toppen */
+    width: 40%;
+    position: left;
+    margin-top: 0;
+    margin-left: 2vw;
+    margin-right: 2vw;
 }
 
-#container:hover {
-    transform: scale(1.05); /* Let forstørrelse ved hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Større skygge ved hover */
+
+#container input[type="text"] {
+    /* Additional styles for text inputs */
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ff5e91;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
 }
 
-#container:active {
-    transform: scale(0.95); /* Tryk-effekt når knappen er klikket */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skygge når knappen er klikket */
+
+#tilføjSpillerKnap {
+    font-family: 'Poppins', sans-serif;
+    left: 0;
+    background-color:#ff5e91;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
 
 #fjerneknap {
-    background-color: rgb(255, 255, 255); /* Grøn baggrundsfarve */
-    color: white; /* Hvid tekstfarve */
-    padding: 5px 5px; /* Polstring for størrelse */
-    text-align: center; /* Centreret tekst */
-    font-size: 1.5em; /* Større tekststørrelse */
-    font-weight: bold; /* Fed tekst */
-    border: none; /* Ingen kanter */
-    border-radius: 20px; /* Runde hjørner */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Skyggeeffekt for dybde */
-    cursor: pointer; /* Cursor som en hånd når du holder musen over */
-    transition: transform 0.1s ease, box-shadow 0.1s ease; /* Animation for klik og hover */
-    outline: none; /* Ingen kontur når den er i fokus */
-    margin-top: 10px; /* Afstand fra toppen */
+    position: absolute;
+    top: 2vh; /* Adjust this value to control the vertical position */
+    left: 40%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-#fjerneknap:hover {
-    transform: scale(1.05); /* Let forstørrelse ved hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Større skygge ved hover */
+#deletebutton {
+    font-family: 'Poppins', sans-serif;
+    left: 0;
+    background-color:#ff5e91;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#fjerneknap:active {
-    transform: scale(0.95); /* Tryk-effekt når knappen er klikket */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skygge når knappen er klikket */
-}
 #closeButton {
     /* Her kan du tilføje dine CSS styles */
-    background-color: #f44336; /* Rød baggrundsfarve for eksempel */
+    background-color: #ff5e91;; /* Rød baggrundsfarve for eksempel */
     color: white; /* Hvid tekst */
     /* Eksisterende stilarter */
     position: fixed; /* Fastgør knappen til en position på skærmen */
     left: 50%; /* Centrerer knappen horisontalt */
-   
+    font-family: 'Poppins', sans-serif;
     transform: translateX(-50%) translateY(50%); /* Flytter knappen op og centrere den horisontalt */
     z-index: 1000; /* Sørger for at knappen ligger over andre elementer */
     padding: 30px 150px; /* Større polstring for at gøre knappen større */
     font-size: 2rem; /* Større skriftstørrelse, juster efter behov */
     top: 80%; /* Placer knappen 80% fra toppen af skærmen */
+    border: none; /* Ingen kant */
+    border-radius: 10px; /* Afrundede hjørner */
 }
 label[for="toggleCheckbox"] {
     display: inline-block; /* Gør det muligt at sætte margin */
@@ -135,29 +193,42 @@ label[for="toggleCheckbox"] {
     cursor: pointer; /* Gør musemarkøren til en hånd, når du holder over label */
     font-size: 1.2rem; /* Større tekststørrelse for bedre læsbarhed */
     color: #fff;
+    margin-left: 2vw;
+    padding-left: 30px;
+    margin-top: 30px;
 }
 
 /* Custom style for checkbox */
 #toggleCheckbox {
-    accent-color: green; /* Skifter farven på checkboxen når den er markeret */
+    accent-color: #ff5e91; /* Skifter farven på checkboxen når den er markeret */
     cursor: pointer; /* Gør musemarkøren til en hånd, når du holder over checkbox */
     transform: scale(1.5); /* Forstørrer checkboxen for bedre tilgængelighed */
     margin: 5px; /* Lidt plads omkring checkboxen */
-
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 
 #valgmuligheder {
-    padding: 25px;
-    max-width: 350px; /* Justeret bredde for bedre visning */
-    background-color: #ffffff; /* Ren hvid for at fremhæve elementet */
+    position: absolute;
+    top: 0vh; /* Juster denne værdi for at kontrollere den vertikale position */
+    left: 50%; /* Centrerer knappen horisontalt */
+    width: 40vw;
+    padding: 2vw;
+    background-color: #ff5e91; /* Ren hvid for at fremhæve elementet */
+    color: white;
     border-radius: 10px; /* Mere markante afrundede hjørner */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Dybere og mere markant skygge */
     text-align: center; /* Sørger for at teksten er centreret */
+    margin-left: 2vw;
+    margin-right: 2vw
+
 }
 
+
 #optionsSelect {
-    width: 100%;
+    position: relative; /* Positioneret relativt til forældreelementet */
+    width: 80%;
     padding: 12px 10px; /* Lidt mere padding for bedre klikbarhed */
     border-radius: 6px; /* Blødere kanter */
     border: 2px solid #dee2e6; /* Solid og subtil kant */
@@ -168,19 +239,68 @@ label[for="toggleCheckbox"] {
 }
 
 #optionsSelect:focus {
+    position: relative;
     outline: none;
-    border-color: #007bff; /* Lyseblå fremhævning ved fokus */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtil glorie-effekt */
+    border-color: #ff5e91; /* Lyseblå fremhævning ved fokus */
 }
 
 option {
+    position: relative;
     padding: 10px; /* Ensartet padding for alle valgmuligheder */
     background-color: #fff; /* Hvid baggrund for at sikre læsbarhed */
 }
 
-/* Farvetema til hver mulighed for visuel differentiering */
-option[value="mulighed1"] { background-color: #f0fff4; } /* Blød mint */
-option[value="mulighed2"] { background-color: #c6f6d5; } /* Lys grøn */
-option[value="mulighed3"] { background-color: #9ae6b4; } /* Mellemliggende grøn */
-option[value="mulighed4"] { background-color: #68d391; } /* Frisk grøn */
-option[value="mulighed5"] { background-color: #38a169; } /* Dyb grøn */
+
+@media (max-width: 650px) { #container {
+    position: absolute;
+    left: 0%;
+    top: 25vh;
+    background-color: rgb(255, 255, 255); /* Grøn baggrundsfarve */
+    font-family: 'Poppins', sans-serif;
+    color: white; /* Hvid tekstfarve */
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    text-align: left; /* Centreret tekst */
+    font-size: 1.5em; /* Større tekststørrelse */
+    font-weight: bold; /* Fed tekst */
+    border: none; /* Ingen kanter */
+    border-radius: 10px; /* Mere markante afrundede hjørner */
+    cursor: pointer; /* Cursor som en hånd når du holder musen over */
+    outline: none; /* Ingen kontur når den er i fokus */
+    width: 80%;
+    margin-top: 0;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+
+
+#valgmuligheder {
+    position: absolute;
+    top: 10vh; /* Juster denne værdi for at kontrollere den vertikale position */
+    left: 0%; /* Centrerer knappen horisontalt */
+    width: 92%;
+    padding: 2vw;
+    background-color: #ff5e91; /* Ren hvid for at fremhæve elementet */
+    color: white;
+    border-radius: 10px; /* Mere markante afrundede hjørner */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Dybere og mere markant skygge */
+    text-align: center; /* Sørger for at teksten er centreret */
+    margin-left: 2vw;
+    margin-right: 2vw;
+
+}
+
+#fjerneknap {
+    position: absolute;
+    top: 2vh; /* Adjust this value to control the vertical position */
+    left: 70%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+}
