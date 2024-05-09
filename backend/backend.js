@@ -18,6 +18,10 @@ class Udfordring {
   constructor(id) {
     this.id = id;
     this.type = "";
+    this.kategori = "";
+  }
+  præsenter() {
+    console.log(`ID: ${this.id}, Type: ${this.type}`);
   }
 }
 
@@ -27,6 +31,10 @@ class Kort extends Udfordring {
     this.tekst = tekst;
     this.type = "kort";
   }
+  præsenter() {
+    super.præsenter(); // Call superclass method
+    console.log(`Tekst: ${this.tekst}`); // Add subclass-specific information
+  }
 }
 
 class Spil extends Udfordring {
@@ -34,6 +42,10 @@ class Spil extends Udfordring {
     super(id);
     this.navn = navn;
     this.type = "spil";
+  }
+  præsenter() {
+    super.præsenter(); // Call superclass method
+    console.log(`Navn: ${this.navn}`); // Add subclass-specific information
   }
 }
 
@@ -92,6 +104,7 @@ app.get("/hentUdfordringer", (req, res) => {
   const combinedSamling = kortSamling.concat(spilSamling);
   // Ensure i doesn't exceed combinedSamling length
   const i = Math.floor(Math.random() * combinedSamling.length);
+ //combinedSamling[i].præsenter();
   res.json(combinedSamling[i]);
 });
 
