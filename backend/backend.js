@@ -1,19 +1,19 @@
-// Import required modules
+// Importér nødvendige moduler
 const express = require("express");
 const fs = require("fs");
 
-// Create an instance of the Express application
+// Opret en instans af Express-applikationen
 const app = express();
 const port = 3001;
 
-// Serve static files from the "frontend" directory
+// Server statiske filer fra mappen "frontend"
 app.use(
   express.static("frontend", {
     index: "index.html",
   })
 );
 
-// Define classes
+// Definér klasser
 class Udfordring {
   constructor(id) {
     this.id = id;
@@ -32,8 +32,8 @@ class Kort extends Udfordring {
     this.type = "kort";
   }
   præsenter() {
-    super.præsenter(); // Call superclass method
-    console.log(`Tekst: ${this.tekst}`); // Add subclass-specific information
+    super.præsenter(); // Kalder superklassens metode
+    console.log(`Tekst: ${this.tekst}`); // Tilføjer underklassens specifikke information
   }
 }
 
@@ -44,47 +44,49 @@ class Spil extends Udfordring {
     this.type = "spil";
   }
   præsenter() {
-    super.præsenter(); // Call superclass method
-    console.log(`Navn: ${this.navn}`); // Add subclass-specific information
+    super.præsenter(); // Kalder superklassens metode
+    console.log(`Navn: ${this.navn}`); // Tilføjer underklassens specifikke information
   }
 }
 
-// Function to read and process JSON file for "kort" cards
+// Funktion til at læse og behandle JSON-fil for "kort" kortene
 function lavKort(callback) {
   fs.readFile('backend/kort.json', 'utf8', (err, data) => {
     if (err) {
-      console.error('Error reading kort JSON file:', err);
+      console.error('Fejl ved læsning af kort JSON-fil:', err);
       callback(err);
       return;
     }
-    // Parse JSON data
+    // Parser JSON-data
+    console.log(data);
     const kortData = JSON.parse(data);
+    console.log(kortData);
     const kortSamling = kortData.map(kortInfo => new Kort(kortInfo.id, kortInfo.tekst));
     callback(null, kortSamling);
   });
 }
 
-// Function to read and process JSON file for "spil" cards
+// Funktion til at læse og behandle JSON-fil for "spil" kortene
 function lavSpil(callback) {
   fs.readFile('backend/spil.json', 'utf8', (err, data) => {
     if (err) {
-      console.error('Error reading spil JSON file:', err);
+      console.error('Fejl ved læsning af spil JSON-fil:', err);
       callback(err);
       return;
     }
-    // Parse JSON data
+    // Parser JSON-data
     const spilData = JSON.parse(data);
     const spilSamling = spilData.map(spilInfo => new Spil(spilInfo.id, spilInfo.navn));
     callback(null, spilSamling);
   });
 }
 
-// Call lavKort and lavSpil once when the server starts
+// Kald lavKort og lavSpil én gang når serveren starter
 let kortSamling = [];
 let spilSamling = [];
 lavKort((err, kort) => {
   if (err) {
-    console.error('Error creating kort:', err);
+    console.error('Fejl ved oprettelse af kort:', err);
     return;
   }
   kortSamling = kort;
@@ -92,24 +94,24 @@ lavKort((err, kort) => {
 
 lavSpil((err, spil) => {
   if (err) {
-    console.error('Error creating spil:', err);
+    console.error('Fejl ved oprettelse af spil:', err);
     return;
   }
   spilSamling = spil;
 });
 
-// Endpoint to get a card text
+// Endpoint for at hente en korttekst
 app.get("/hentUdfordringer", (req, res) => {
-  // Combine kortSamling and spilSamling into one array
+  // Kombinér kortSamling og spilSamling til én array
   const combinedSamling = kortSamling.concat(spilSamling);
-  // Ensure i doesn't exceed combinedSamling length
+  // Sørg for, at 'i' ikke overskrider længden af combinedSamling
   const i = Math.floor(Math.random() * combinedSamling.length);
  //combinedSamling[i].præsenter();
   res.json(combinedSamling[i]);
 });
 
 
-// Start the server
+// Start serveren
 app.listen(port, () => {
-  console.log(`Backend listening on port ${port}`);
+  console.log(`Backend lytter på port ${port}`);
 });
