@@ -3,7 +3,9 @@ let inputs = {};
 let person = "";
 let person1 = "";
 let selectedOption = 3;
-let checkboxStatus = false; // Initial værdi er 'true' fordi checkboxen er markeret som checked i HTML
+let checkboxStatus = false; // Initial værdi er 'false' fordi checkboxen er markeret som unchecked i HTML
+
+testRandomTåre();
 
 createInputField(); // Opret det første inputfelt ved indlæsning
 createInputField(); // Opret det andet inputfelt ved indlæsning
@@ -190,3 +192,20 @@ function HåndterSpil(data) {
     spilFunktion(); // Kører den relevante funktion hvis spillet er aktiveret
   }
 }
+
+
+
+
+//UNIT TESTS
+
+
+function testRandomTåre() {
+  let result = randomTåre(2);
+  if (result < 0 || result > 2) {
+    throw new Error("randomTåre(2) should return a number between 0 and 2, but returned " + result);
+  }
+  else {
+    console.log("randomTåre() passed");
+  }
+}
+
